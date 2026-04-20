@@ -28,7 +28,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, title, children, onClose, isClosa
                 >
                     <motion.div
                         key="modal-content"
-                        className={`bg-[linear-gradient(130deg,_rgba(249,241,249,1)_0%,_rgba(234,243,253,1)_35%,_rgba(237,251,242,1)_100%)] mx-auto flex w-full min-w-0 max-w-lg max-h-[min(90dvh,calc(100dvh-env(safe-area-inset-top)-env(safe-area-inset-bottom)-2rem))] flex-col overflow-hidden rounded-[16px] shadow-lg px-[18px] py-[18px] sm:max-h-[min(92dvh,calc(100dvh-5rem))] sm:px-[20px] sm:py-[20px] ${heightFull ? 'h-full max-h-none' : ''}`}
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby={title ? 'fbcm-modal-form-title' : undefined}
+                        className={`mx-auto flex w-full min-w-0 max-w-lg max-h-[min(90dvh,calc(100dvh-env(safe-area-inset-top)-env(safe-area-inset-bottom)-2rem))] flex-col overflow-hidden rounded-[18px] border border-[#e8eaed] bg-white shadow-[0_12px_40px_rgba(15,20,30,0.18)] px-[18px] py-[18px] sm:max-h-[min(92dvh,calc(100dvh-5rem))] sm:px-[22px] sm:py-[20px] ${heightFull ? 'h-full max-h-none' : ''}`}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
@@ -37,8 +40,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, title, children, onClose, isClosa
                         {/* Header */}
                         <div className={`flex items-center justify-between ${isClosable && title ? 'mb-[10px]' : 'pb-[0px]'}`}>
                             {title ? (
-                                                               <h2 className="min-w-0 flex-1 pr-2 text-left text-[14px] font-bold leading-snug text-[#0A1317] sm:text-[15px] break-words">{title}</h2>
-                            ) : (<div className="w-full"></div>)}
+                                <h2
+                                    id="fbcm-modal-form-title"
+                                    className="min-w-0 flex-1 pr-2 text-left text-[15px] font-bold leading-snug tracking-tight text-[#0A1317] sm:text-[16px] break-words"
+                                >
+                                    {title}
+                                </h2>
+                            ) : (
+                                <div className="w-full" />
+                            )}
 
                             {isClosable ? (
                                 <button

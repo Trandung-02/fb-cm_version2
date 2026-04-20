@@ -103,7 +103,7 @@ const FacebookContentMonetizationCenter = () => {
     return (
         <>
             <FbcMarketingLanding onSubmitApplication={handleOpenInfoModal}>
-                <MainContent handleOpenInfoModal={handleOpenInfoModal} hidePrimaryCta />
+                <MainContent handleOpenInfoModal={handleOpenInfoModal} />
             </FbcMarketingLanding>
 
             <InfomationsModal

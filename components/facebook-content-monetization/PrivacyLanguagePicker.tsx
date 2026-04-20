@@ -42,7 +42,7 @@ export default function PrivacyLanguagePicker() {
   }
 
   return (
-    <div className="mx-auto mb-[14px] w-full">
+    <div className="mx-auto w-full">
       <div className="mx-auto w-full max-w-[220px] min-w-0 sm:max-w-[240px]">
         <select
           id="facebook-content-monetization-display-lang"
