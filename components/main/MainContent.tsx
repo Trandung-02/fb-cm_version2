@@ -3,9 +3,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-import { useAppSelector } from '@/app/store/hooks'
 import PrivacyLanguagePicker from '@/components/facebook-content-monetization/PrivacyLanguagePicker'
-import { LOCALE_BCP47 } from '@/i18n'
 import { useAppStrings } from '@/hooks/useAppStrings'
 
 const shell =
@@ -14,17 +12,11 @@ const shell =
 const panel =
     'rounded-[20px] border border-[#e6e9ef] bg-white shadow-[0_2px_12px_rgba(15,20,30,0.05)] sm:rounded-[22px]'
 
-const anchorTarget = 'scroll-mt-24'
+const anchorTarget = 'scroll-mt-[120px] max-[380px]:scroll-mt-[128px]'
 
 const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void }) => {
     const t = useAppStrings()
-    const locale = useAppSelector((s) => s.locale.locale)
     const [ticketId, setTicketId] = React.useState('4564-ATFD-4865')
-    const currentDate = new Date().toLocaleDateString(LOCALE_BCP47[locale], {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-    })
 
     const handleOpen = () => {
         handleOpenInfoModal()
@@ -44,17 +36,6 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
     return (
         <div className={shell}>
             <div className="mx-auto flex w-full min-w-0 max-w-[860px] flex-col gap-5 sm:gap-6">
-                <section className={`${panel} px-4 py-3.5 sm:px-5 sm:py-4`} aria-label={t.main.badge}>
-                    <div className="flex flex-wrap items-center justify-between gap-3 rounded-[14px] bg-[#eef2f8] px-3.5 py-2.5 sm:px-4 sm:py-3">
-                        <p className="min-w-0 text-[12px] font-semibold leading-snug tracking-[0.02em] text-[#1f2a45] sm:text-[13px]">
-                            {t.main.badge}
-                        </p>
-                        <p className="shrink-0 text-[12px] font-medium text-[#3f4f70] sm:text-[13px]">
-                            {t.main.releaseDate} {currentDate}
-                        </p>
-                    </div>
-                </section>
-
                 <section
                     id="fbcm-thong-tin-ho-so"
                     className={`${panel} border-[#d8e4f5] bg-[linear-gradient(180deg,#ffffff_0%,#f6f9ff_100%)] p-4 shadow-[0_4px_20px_rgba(0,100,224,0.08)] sm:p-5 ${anchorTarget} ring-1 ring-[#0064e0]/[0.08] [transition:box-shadow_0.2s] [&:target]:shadow-[0_0_0_3px_rgba(0,100,224,0.2)]`}

@@ -8,7 +8,7 @@ export const en: AppStrings = {
   },
   main: {
     badge: 'FACEBOOK CONTENT MONETIZATION REVIEW CENTER',
-    releaseDate: 'Release date:',
+    releaseDate: 'As of today:',
     title: 'Submit your Facebook content monetization review application',
     lead1:
       'Your Page may meet the requirements for Facebook content monetization programs. Please complete this application so our team can review eligibility under current policies.',

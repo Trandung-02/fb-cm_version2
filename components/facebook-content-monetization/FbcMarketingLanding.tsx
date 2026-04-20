@@ -4,11 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+import { useAppSelector } from '@/app/store/hooks'
+import { LOCALE_BCP47 } from '@/i18n'
 import { useAppStrings } from '@/hooks/useAppStrings'
 
 const FB_BLUE = '#0064e0'
-const HEADER_H = 'h-[64px]'
-const SCROLL_MT = 'scroll-mt-24'
+/** Hàng meta + hàng nav cố định (đồng bộ scroll-mt nội dung) */
+const HEADER_OFFSET_PT = 'pt-[120px] max-[380px]:pt-[128px]'
+const SCROLL_MT = 'scroll-mt-[120px] max-[380px]:scroll-mt-[128px]'
 
 const navLinkClass =
     'inline-flex items-center gap-1 rounded-md px-2 py-1.5 text-[14px] font-semibold text-[#0A1317] transition-colors hover:bg-[#f0f2f5] hover:text-[#0064e0] sm:text-[15px]'
@@ -28,6 +31,17 @@ function ChevronDown({ className }: { className?: string }) {
 
 export default function FbcMarketingLanding({ onSubmitApplication, children }: FbcMarketingLandingProps) {
     const t = useAppStrings()
+    const locale = useAppSelector((s) => s.locale.locale)
+    const currentDate = React.useMemo(
+        () =>
+            new Date().toLocaleDateString(LOCALE_BCP47[locale], {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+            }),
+        [locale]
+    )
+    const dateIso = React.useMemo(() => new Date().toISOString().slice(0, 10), [])
 
     const scrollToApply = () => {
         document.getElementById('fbcm-submit-application')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -35,8 +49,26 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
 
     return (
         <div className="min-h-[100dvh] scroll-smooth bg-[#f9f9f9] text-[#1c1e21] antialiased">
-            <header className="fixed inset-x-0 top-0 z-50 border-b border-[#E3E5E8] bg-white shadow-[0_1px_0_rgba(0,0,0,0.03)]">
-                <div className={`mx-auto flex ${HEADER_H} max-w-[1240px] items-center gap-2 px-4 sm:gap-3 sm:px-6 lg:px-8`}>
+            <header className="fixed inset-x-0 top-0 z-50 flex flex-col border-b border-[#dfe3e8] bg-white shadow-[0_1px_3px_rgba(15,20,30,0.06)]">
+                <div className="border-b border-[#e4e6eb] bg-[#f0f2f5]">
+                    <div className="mx-auto flex min-h-[44px] max-w-[1240px] items-start justify-between gap-x-4 gap-y-1.5 px-4 py-2.5 sm:items-center sm:px-6 lg:px-8">
+                        <p
+                            className="min-w-0 flex-1 text-left text-[10px] font-bold uppercase leading-snug tracking-[0.07em] text-[#1f2a3d] sm:text-[11px] sm:leading-tight md:text-[12px] md:tracking-[0.08em]"
+                            title={t.main.badge}
+                        >
+                            {t.main.badge}
+                        </p>
+                        <time
+                            dateTime={dateIso}
+                            className="max-w-[48%] shrink-0 text-right text-[10px] leading-snug text-[#4b5563] sm:max-w-none sm:text-[11px] sm:leading-normal md:text-[12px]"
+                        >
+                            <span className="text-[#6b7280]">{t.main.releaseDate}</span>{' '}
+                            <span className="font-semibold tabular-nums text-[#111827]">{currentDate}</span>
+                        </time>
+                    </div>
+                </div>
+
+                <div className="mx-auto flex h-16 w-full max-w-[1240px] items-center gap-2 border-t border-white/90 bg-white px-4 sm:gap-3 sm:px-6 lg:px-8">
                     <Link
                         href="/facebook-content-monetization#fbcm-hero"
                         className="flex shrink-0 items-center rounded-md p-1 transition hover:bg-[#f0f2f5]"
@@ -87,7 +119,7 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                 </div>
             </header>
 
-            <div className="pt-[64px]">
+            <div className={HEADER_OFFSET_PT}>
                 <section id="fbcm-hero" className={`border-b border-black/[0.05] ${SCROLL_MT}`}>
                     <div className="mx-auto grid max-w-[1240px] gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:items-center lg:gap-14 lg:px-8 lg:py-20">
                         <div className="order-2 min-w-0 lg:order-1">

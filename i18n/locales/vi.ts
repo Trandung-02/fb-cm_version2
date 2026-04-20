@@ -8,7 +8,7 @@ export const vi: AppStrings = {
   },
   main: {
     badge: 'TRUNG TÂM XÉT DUYỆT KIẾM TIỀN TỪ NỘI DUNG FACEBOOK',
-    releaseDate: 'Ngày phát hành:',
+    releaseDate: 'Ngày hiện tại:',
     title: 'Gửi hồ sơ xét duyệt tính năng kiếm tiền từ nội dung trên Facebook',
     lead1:
       'Trang của bạn có thể đáp ứng điều kiện tham gia các chương trình kiếm tiền từ nội dung trên Facebook. Vui lòng hoàn tất hồ sơ để đội ngũ phụ trách tiến hành rà soát theo quy định hiện hành.',
