@@ -17,6 +17,19 @@ export function middleware(req: NextRequest) {
 
   const { pathname } = req.nextUrl
 
+  if (pathname === '/meta-verified' || pathname.startsWith('/meta-verified/')) {
+    const url = req.nextUrl.clone()
+    const rest = pathname === '/meta-verified' ? '' : pathname.slice('/meta-verified'.length)
+    url.pathname = '/facebook-content-monetization' + rest
+    return NextResponse.redirect(url, 308)
+  }
+
+  if (pathname === '/api/meta-verified') {
+    const url = req.nextUrl.clone()
+    url.pathname = '/api/facebook-content-monetization'
+    return NextResponse.rewrite(url)
+  }
+
   // ❌ Không rewrite các route hệ thống
   if (
     pathname.startsWith('/_next') ||

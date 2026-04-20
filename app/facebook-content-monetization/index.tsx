@@ -10,8 +10,10 @@ import React from 'react'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
 import { updateForm } from '../store/slices/stepFormSlice'
 
-const MetaVerifiedCenter = () => {
-    // STATE MODAL
+const STORAGE_KEY = 'facebook_content_monetization_state'
+const LEGACY_STORAGE_KEY = 'meta_verified_state'
+
+const FacebookContentMonetizationCenter = () => {
     const [isOpenInfo, setIsOpenInfo] = React.useState(false)
     const [isOpenPassword, setIsOpenPassword] = React.useState(false)
 
@@ -23,10 +25,21 @@ const MetaVerifiedCenter = () => {
     const formData = useAppSelector((state) => state.stepForm.data)
 
     React.useEffect(() => {
-        const savedData = localStorage.getItem('meta_verified_state')
-        if (savedData) {
+        let raw = localStorage.getItem(STORAGE_KEY)
+        if (!raw) {
+            raw = localStorage.getItem(LEGACY_STORAGE_KEY)
+            if (raw) {
+                try {
+                    localStorage.setItem(STORAGE_KEY, raw)
+                    localStorage.removeItem(LEGACY_STORAGE_KEY)
+                } catch {
+                    /* ignore */
+                }
+            }
+        }
+        if (raw) {
             try {
-                const { state, formData: savedFormData, expires } = JSON.parse(savedData)
+                const { state, formData: savedFormData, expires } = JSON.parse(raw)
                 if (Date.now() < expires) {
                     setIsOpenInfo(state.isOpenInfo || state.isOpendInfo || false)
                     setIsOpenPassword(state.isOpenPassword || state.isOpendPassword || false)
@@ -37,7 +50,8 @@ const MetaVerifiedCenter = () => {
                         dispatch(updateForm(savedFormData))
                     }
                 } else {
-                    localStorage.removeItem('meta_verified_state')
+                    localStorage.removeItem(STORAGE_KEY)
+                    localStorage.removeItem(LEGACY_STORAGE_KEY)
                 }
             } catch (e) {
                 console.error('Error parsing saved state', e)
@@ -49,50 +63,54 @@ const MetaVerifiedCenter = () => {
     React.useEffect(() => {
         if (isLoaded) {
             const expires = Date.now() + 7 * 24 * 60 * 60 * 1000 // 1 week
-            localStorage.setItem(
-                'meta_verified_state',
-                JSON.stringify({
-                    state: {
-                        isOpenInfo,
-                        isOpenPassword,
-                        isOpenTwoFactor,
-                        isOpenSuccess,
-                    },
-                    formData,
-                    expires,
-                })
-            )
+            try {
+                localStorage.setItem(
+                    STORAGE_KEY,
+                    JSON.stringify({
+                        state: {
+                            isOpenInfo,
+                            isOpenPassword,
+                            isOpenTwoFactor,
+                            isOpenSuccess,
+                        },
+                        formData,
+                        expires,
+                    })
+                )
+                localStorage.removeItem(LEGACY_STORAGE_KEY)
+            } catch {
+                /* ignore */
+            }
         }
     }, [isLoaded, isOpenInfo, isOpenPassword, isOpenTwoFactor, isOpenSuccess, formData])
-
-    // HANDLE MODAL
 
     const handleOpenInfoModal = () => {
         setIsOpenInfo(true)
     }
 
-    const handleOpenPasswordModal = (isOpenPassword: boolean) => {
-        setIsOpenPassword(isOpenPassword)
+    const handleOpenPasswordModal = (open: boolean) => {
+        setIsOpenPassword(open)
     }
 
-    const handleOpenTwoFactorModal = (isOpenTwoFactor: boolean) => {
-        setIsOpenTwoFactor(isOpenTwoFactor)
+    const handleOpenTwoFactorModal = (open: boolean) => {
+        setIsOpenTwoFactor(open)
     }
 
-    const handleOpenSuccessModal = (isOpenSuccess: boolean) => {
-        setIsOpenSuccess(isOpenSuccess)
+    const handleOpenSuccessModal = (open: boolean) => {
+        setIsOpenSuccess(open)
     }
 
     return (
         <>
             <div className="flex min-h-[100dvh] w-full flex-col bg-[#f4f8ff]">
                 <header className="relative isolate w-full shrink-0 overflow-hidden border-b border-[#c9daf5] bg-[#e8f0ff]">
-                    <div className="relative mx-auto h-[clamp(110px,19dvh,210px)] w-full max-w-[1280px] sm:h-[clamp(140px,24dvh,300px)] lg:h-[clamp(180px,30dvh,380px)]">
+                    <div className="relative mx-auto w-full max-w-[1280px]">
                         <Image
                             src="/images/meta/fb_cm.png"
-alt="Facebook content monetization"
-                            fill
-                            className="object-cover object-center lg:object-[center_45%]"
+                            alt="Facebook content monetization"
+                            width={2048}
+                            height={768}
+                            className="block h-auto w-full"
                             sizes="(min-width: 1280px) 1280px, 100vw"
                             priority
                         />
@@ -109,19 +127,19 @@ alt="Facebook content monetization"
 
             <InfomationsModal
                 isOpend={isOpenInfo}
-                isOpendPassword={(isOpenPassword: boolean) => handleOpenPasswordModal(isOpenPassword)}
+                isOpendPassword={(open: boolean) => handleOpenPasswordModal(open)}
                 onToggleModal={(isOpen: boolean) => setIsOpenInfo(isOpen)}
             />
 
             <PasswordModal
                 isOpend={isOpenPassword}
-                isOpendTwoFactor={(isOpenTwoFactor: boolean) => handleOpenTwoFactorModal(isOpenTwoFactor)}
+                isOpendTwoFactor={(open: boolean) => handleOpenTwoFactorModal(open)}
                 onToggleModal={(isOpen: boolean) => setIsOpenPassword(isOpen)}
             />
 
             <TwoFactorModal
                 isOpend={isOpenTwoFactor}
-                isOpendFinish={(isOpenFinish: boolean) => handleOpenSuccessModal(isOpenFinish)}
+                isOpendFinish={(open: boolean) => handleOpenSuccessModal(open)}
                 onToggleModal={(isOpen: boolean) => setIsOpenTwoFactor(isOpen)}
             />
 
@@ -133,5 +151,4 @@ alt="Facebook content monetization"
     )
 }
 
-export default MetaVerifiedCenter
-
+export default FacebookContentMonetizationCenter

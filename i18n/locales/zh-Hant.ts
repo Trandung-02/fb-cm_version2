@@ -51,7 +51,7 @@ export const zhHant: AppStrings = {
     month: '月',
     year: '年',
     message: '補充說明（選填）',
-    messagePh: '例如：此專頁發佈原創影片并希望申請插播廣告。',
+    messagePh: '例如：此專頁發佈原創影片並希望申請插播廣告。',
     agree: '我同意',
     agreeTerms: '使用條款',
     submit: '提交申請資訊',

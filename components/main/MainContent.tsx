@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import { useAppSelector } from '@/app/store/hooks'
-import PrivacyLanguagePicker from '@/components/meta-verified/PrivacyLanguagePicker'
+import PrivacyLanguagePicker from '@/components/facebook-content-monetization/PrivacyLanguagePicker'
 import { LOCALE_BCP47 } from '@/i18n'
 import { useAppStrings } from '@/hooks/useAppStrings'
 
@@ -40,7 +40,7 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
 
                         <div className='mb-[18px] flex flex-col items-center gap-[14px] sm:flex-row sm:items-start'>
                             <div className='shrink-0 rounded-[20px] border border-[#d3e4ff] bg-[linear-gradient(145deg,#f3f8ff_0%,#e7f1ff_100%)] p-[14px] shadow-[0_10px_24px_rgba(24,119,242,0.18)] sm:self-start'>
-                                <img src="/images/icons/ic_blue.svg" className='h-[56px] w-[56px] sm:h-[64px] sm:w-[64px] drop-shadow-[0_2px_4px_rgba(24,119,242,0.2)]' alt="Facebook content monetization" />
+                                <img src="/images/meta/logo.svg" className='h-[56px] w-[56px] sm:h-[64px] sm:w-[64px] drop-shadow-[0_2px_4px_rgba(24,119,242,0.2)]' alt="Facebook" />
                             </div>
                             <div className='min-w-0 w-full text-center sm:text-left'>
                                 <h1 className='text-[1.55rem] font-extrabold leading-[1.25] text-[#0b1f44] sm:text-[2.1rem] break-words'>
@@ -111,23 +111,23 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
 
                     <div className='mt-[22px] border-t border-[#e3ebf8] pt-[16px] sm:mt-[24px]'>
                         <div className='flex flex-wrap items-center justify-center gap-x-3 gap-y-2 px-1 text-center text-[11px] font-medium text-[#607292] sm:text-[12px]'>
-                            <Link href="/meta-verified" className='transition-colors duration-200 hover:text-[#1d3f72] hover:underline'>
+                            <Link href="/facebook-content-monetization" className='transition-colors duration-200 hover:text-[#1d3f72] hover:underline'>
                                 {t.main.linkPrivacy}
                             </Link>
                             <span aria-hidden="true" className='text-[#9badc8]'>•</span>
-                            <Link href="/meta-verified" className='transition-colors duration-200 hover:text-[#1d3f72] hover:underline'>
+                            <Link href="/facebook-content-monetization" className='transition-colors duration-200 hover:text-[#1d3f72] hover:underline'>
                                 {t.main.linkTerms}
                             </Link>
                             <span aria-hidden="true" className='text-[#9badc8]'>•</span>
-                            <Link href="/meta-verified" className='transition-colors duration-200 hover:text-[#1d3f72] hover:underline'>
+                            <Link href="/facebook-content-monetization" className='transition-colors duration-200 hover:text-[#1d3f72] hover:underline'>
                                 {t.main.linkCommunity}
                             </Link>
                             <span aria-hidden="true" className='text-[#9badc8]'>•</span>
-                            <Link href="/meta-verified" className='transition-colors duration-200 hover:text-[#1d3f72] hover:underline'>
+                            <Link href="/facebook-content-monetization" className='transition-colors duration-200 hover:text-[#1d3f72] hover:underline'>
                                 {t.main.linkHelp}
                             </Link>
                             <span aria-hidden="true" className='text-[#9badc8]'>•</span>
-                            <Link href="/meta-verified" className='transition-colors duration-200 hover:text-[#1d3f72] hover:underline'>
+                            <Link href="/facebook-content-monetization" className='transition-colors duration-200 hover:text-[#1d3f72] hover:underline'>
                                 {t.main.linkBusiness}
                             </Link>
                         </div>

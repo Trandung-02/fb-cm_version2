@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { countryCodeToAppLocale, LOCALE_BCP47 } from '@/i18n'
-import { readSessionDisplayLocale } from '@/utils/metaVerifiedDisplayLocale'
+import { readSessionDisplayLocale } from '@/utils/facebookContentMonetizationDisplayLocale'
 import { getUserLocation } from '../../utils/getLocation'
 import { useAppDispatch, useAppSelector } from './hooks'
 import { setLocale } from './slices/localeSlice'

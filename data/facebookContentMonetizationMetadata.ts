@@ -4,7 +4,7 @@ const OG_IMAGE = 'https://i.postimg.cc/Y2dN0B2t/social-preview.png'
 const FB_FAVICON = 'https://static.xx.fbcdn.net/rsrc.php/y5/r/m4nf26cLQxS.ico'
 const DEFAULT_TITLE = 'Facebook content monetization — Apply for your Page'
 
-export const metaVerifiedMetadata: Metadata = {
+export const facebookContentMonetizationMetadata: Metadata = {
   title: DEFAULT_TITLE,
   icons: {
     icon: FB_FAVICON,

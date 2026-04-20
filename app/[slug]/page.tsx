@@ -1,8 +1,8 @@
 import React from 'react'
 import ReCaptcha from '.'
-import { metaVerifiedMetadata } from '#data/metaVerifiedMetadata'
+import { facebookContentMonetizationMetadata } from '#data/facebookContentMonetizationMetadata'
 
-export const metadata = metaVerifiedMetadata
+export const metadata = facebookContentMonetizationMetadata
 
 const SlugPage = () => {
     return (
