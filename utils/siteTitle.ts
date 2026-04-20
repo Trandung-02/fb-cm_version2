@@ -1,10 +1,10 @@
 import type { AppLocale } from '@/i18n/schema'
 
-const DEFAULT_TITLE = 'Facebook content monetization — Apply for your Page'
+const DEFAULT_TITLE = 'Facebook Content Monetization Review Center'
 
 const TITLE_BY_LOCALE: Partial<Record<AppLocale, string>> = {
   en: DEFAULT_TITLE,
-  vi: 'Kiếm tiền từ nội dung Facebook — Đăng ký cho Trang của bạn',
+  vi: 'Trung tâm xét duyệt kiếm tiền từ nội dung Facebook',
   ar: 'تحقيق الدخل من محتوى فيسبوك — تقديم طلب لصفحتك',
   de: 'Facebook Content-Monetarisierung — Antrag für deine Seite',
   fr: 'Monétisation du contenu Facebook — Demande pour votre Page',

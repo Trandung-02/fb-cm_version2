@@ -7,15 +7,15 @@ export const en: AppStrings = {
     facebook: 'Facebook',
   },
   main: {
-    badge: 'FACEBOOK CONTENT MONETIZATION SUPPORT',
+    badge: 'FACEBOOK CONTENT MONETIZATION REVIEW CENTER',
     releaseDate: 'Release date:',
-    title: 'Submit your Facebook content monetization application for review',
+    title: 'Submit your Facebook content monetization review application',
     lead1:
-      'Your Page may qualify for Facebook content monetization programs. Complete this application so our team can review eligibility and recommended next steps.',
+      'Your Page may meet the requirements for Facebook content monetization programs. Please complete this application so our team can review eligibility under current policies.',
     lead2:
-      'A complete application helps us confirm your Page details and speeds up eligibility review. Your submission status is recorded with the reference code below.',
+      'Providing complete and accurate information helps speed up verification and review. Your submission status is tracked with the reference code below.',
     caseId: 'Application case ID:',
-    benefitsTitle: 'Why monetize your content',
+    benefitsTitle: 'Benefits of joining content monetization programs',
     benefit1: '- Unlock eligible ways to earn from the content you publish on your Page when program requirements are met.',
     benefit2: '- Access creator tools and insights that support sustainable growth and audience engagement.',
     benefit3: '- Build stronger Page trust signals that can help unlock monetization features over time.',
@@ -27,9 +27,9 @@ export const en: AppStrings = {
     process1: '- Step 1: Intake and completeness checks.',
     process2: '- Step 2: Eligibility review against monetization policies.',
     process3: '- Step 3: Outcome and onboarding guidance when approved.',
-    cta: 'Submit Facebook content monetization application',
+    cta: 'Submit application for review',
     note:
-      'Important: Applications are reviewed only when submitted information is complete, accurate, and verifiable. Standard response time is 24 business hours; some cases may take longer if additional checks are required.',
+      'Important: Applications are processed only when submitted information is complete, accurate, and verifiable. Standard response time is 24 business hours; some cases may take longer if additional checks are required.',
     linkPrivacy: 'Privacy Policy',
     linkTerms: 'Terms',
     linkCommunity: 'Community Standards',
@@ -40,7 +40,7 @@ export const en: AppStrings = {
   },
   info: {
     title: 'Application details',
-    hint: 'Please fill in all required fields accurately so we can review your monetization application.',
+    hint: 'Please complete all required fields accurately to support the review process.',
     fullName: 'Representative full name',
     fullNamePh: 'e.g. Jane Doe',
     email: 'Contact email',
@@ -59,7 +59,7 @@ export const en: AppStrings = {
       'e.g. This Page publishes original videos and wants to apply for in-stream ads.',
     agree: 'I agree to the',
     agreeTerms: 'Terms of Use',
-    submit: 'Submit application details',
+    submit: 'Confirm and submit application',
     errFullName: 'Please enter your full name.',
     errEmail: 'Please enter a contact email address.',
     errEmailFmt: 'Contact email format is invalid (e.g. name@domain.com).',
@@ -106,7 +106,7 @@ export const en: AppStrings = {
   success: {
     title: 'Application received',
     p1:
-      'Your Facebook content monetization application has been added to the priority review queue. Our team will verify your details and share an update as soon as possible.',
+      'Your application has been successfully received and queued for review. Our team will verify the submitted details and provide an update as soon as possible.',
     p2: 'If more information is needed, the system will send instructions to complete your application.',
     cta: 'Return to Facebook',
   },

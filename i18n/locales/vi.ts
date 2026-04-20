@@ -7,15 +7,15 @@ export const vi: AppStrings = {
     facebook: 'Facebook',
   },
   main: {
-    badge: 'HỖ TRỢ KIẾM TIỀN TỪ NỘI DUNG FACEBOOK',
+    badge: 'TRUNG TÂM XÉT DUYỆT KIẾM TIỀN TỪ NỘI DUNG FACEBOOK',
     releaseDate: 'Ngày phát hành:',
-    title: 'Gửi hồ sơ xét duyệt kiếm tiền từ nội dung trên Facebook',
+    title: 'Gửi hồ sơ xét duyệt tính năng kiếm tiền từ nội dung trên Facebook',
     lead1:
-      'Trang của bạn có thể đủ điều kiện tham gia các chương trình kiếm tiền từ nội dung trên Facebook. Hãy hoàn tất hồ sơ để đội ngũ xem xét mức đủ điều kiện và các bước tiếp theo phù hợp.',
+      'Trang của bạn có thể đáp ứng điều kiện tham gia các chương trình kiếm tiền từ nội dung trên Facebook. Vui lòng hoàn tất hồ sơ để đội ngũ phụ trách tiến hành rà soát theo quy định hiện hành.',
     lead2:
-      'Hồ sơ đầy đủ giúp chúng tôi xác nhận thông tin Trang và rút ngắn thời gian xét duyệt. Trạng thái gửi hồ sơ được ghi nhận kèm mã tham chiếu bên dưới.',
+      'Hồ sơ đầy đủ và chính xác giúp việc đối chiếu thông tin được thực hiện nhanh hơn. Trạng thái xử lý sẽ được cập nhật theo mã tham chiếu bên dưới.',
     caseId: 'Mã hồ sơ đăng ký:',
-    benefitsTitle: 'Vì sao nên kiếm tiền từ nội dung',
+    benefitsTitle: 'Lợi ích khi tham gia chương trình kiếm tiền từ nội dung',
     benefit1: '- Mở các hình thức kiếm tiền phù hợp từ nội dung bạn đăng trên Trang khi đáp ứng yêu cầu chương trình.',
     benefit2: '- Tiếp cận công cụ và số liệu dành cho nhà sáng tạo, hỗ trợ tăng trưởng bền vững và tương tác khán giả.',
     benefit3: '- Tăng tín hiệu tin cậy cho Trang, hỗ trợ mở khóa tính năng kiếm tiền theo thời gian.',
@@ -27,9 +27,9 @@ export const vi: AppStrings = {
     process1: '- Bước 1: Tiếp nhận và kiểm tra tính đầy đủ thông tin.',
     process2: '- Bước 2: Xét đủ điều kiện theo chính sách kiếm tiền từ nội dung.',
     process3: '- Bước 3: Kết quả và hướng dẫn triển khai khi được chấp thuận.',
-    cta: 'Gửi hồ sơ kiếm tiền từ nội dung Facebook',
+    cta: 'Gửi hồ sơ xét duyệt',
     note:
-      'Lưu ý quan trọng: Hồ sơ chỉ được xem xét khi thông tin kê khai đầy đủ, chính xác và có thể đối chiếu. Thời gian phản hồi tiêu chuẩn là 24 giờ làm việc; một số trường hợp có thể kéo dài nếu cần kiểm tra bổ sung.',
+      'Lưu ý quan trọng: Hồ sơ chỉ được tiếp nhận khi thông tin kê khai đầy đủ, chính xác và có thể xác minh. Thời gian phản hồi tiêu chuẩn là 24 giờ làm việc; một số trường hợp có thể kéo dài nếu cần kiểm tra bổ sung.',
     linkPrivacy: 'Chính sách quyền riêng tư',
     linkTerms: 'Điều khoản',
     linkCommunity: 'Tiêu chuẩn cộng đồng',
@@ -40,7 +40,7 @@ export const vi: AppStrings = {
   },
   info: {
     title: 'Thông tin hồ sơ',
-    hint: 'Vui lòng điền chính xác và đầy đủ các trường bắt buộc để chúng tôi xem xét hồ sơ kiếm tiền từ nội dung.',
+    hint: 'Vui lòng điền đầy đủ và chính xác các trường bắt buộc để hỗ trợ quá trình xét duyệt.',
     fullName: 'Họ và tên người đại diện',
     fullNamePh: 'Ví dụ: Nguyễn Văn A',
     email: 'Email liên hệ',
@@ -59,7 +59,7 @@ export const vi: AppStrings = {
       'Ví dụ: Trang đăng video gốc và muốn đăng ký quảng cáo trong luồng (in-stream ads).',
     agree: 'Tôi đồng ý với',
     agreeTerms: 'Điều khoản sử dụng',
-    submit: 'Gửi thông tin hồ sơ',
+    submit: 'Xác nhận và gửi hồ sơ',
     errFullName: 'Vui lòng nhập họ và tên đầy đủ.',
     errEmail: 'Vui lòng nhập địa chỉ email liên hệ.',
     errEmailFmt: 'Email liên hệ không đúng định dạng (ví dụ: name@domain.com).',
@@ -104,9 +104,9 @@ export const vi: AppStrings = {
       `Mã xác thực bạn nhập chưa chính xác. Vui lòng thử lại sau ${minutes} phút ${seconds} giây.`,
   },
   success: {
-    title: 'Hồ sơ đã được tiếp nhận',
+    title: 'Đã tiếp nhận hồ sơ',
     p1:
-      'Hồ sơ kiếm tiền từ nội dung Facebook của bạn đã được thêm vào hàng đợi xét duyệt ưu tiên. Đội ngũ sẽ đối chiếu thông tin và thông báo kết quả trong thời gian sớm nhất.',
+      'Hồ sơ của bạn đã được ghi nhận trong hệ thống xét duyệt. Đội ngũ phụ trách sẽ đối chiếu thông tin và phản hồi kết quả trong thời gian sớm nhất.',
     p2: 'Trường hợp cần bổ sung dữ liệu, hệ thống sẽ gửi hướng dẫn để bạn hoàn tất hồ sơ.',
     cta: 'Quay lại Facebook',
   },
