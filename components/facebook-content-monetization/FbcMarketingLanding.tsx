@@ -4,14 +4,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+import PrivacyLanguagePicker from '@/components/facebook-content-monetization/PrivacyLanguagePicker'
 import { useAppSelector } from '@/app/store/hooks'
 import { LOCALE_BCP47 } from '@/i18n'
 import { useAppStrings } from '@/hooks/useAppStrings'
 
 const FB_BLUE = '#0064e0'
 /** Hàng meta + hàng nav cố định (đồng bộ scroll-mt nội dung) */
-const HEADER_OFFSET_PT = 'pt-[120px] max-[380px]:pt-[128px]'
-const SCROLL_MT = 'scroll-mt-[120px] max-[380px]:scroll-mt-[128px]'
+const HEADER_OFFSET_PT = 'pt-[132px] max-[420px]:pt-[140px]'
+const SCROLL_MT = 'scroll-mt-[132px] max-[420px]:scroll-mt-[140px]'
 
 const navLinkClass =
     'inline-flex items-center gap-1 rounded-md px-2 py-1.5 text-[14px] font-semibold text-[#0A1317] transition-colors hover:bg-[#f0f2f5] hover:text-[#0064e0] sm:text-[15px]'
@@ -48,23 +49,28 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
     }
 
     return (
-        <div className="min-h-[100dvh] scroll-smooth bg-[#f9f9f9] text-[#1c1e21] antialiased">
+        <div className="min-h-[100dvh] scroll-smooth bg-[#f6f7f9] text-[#1c1e21] antialiased">
             <header className="fixed inset-x-0 top-0 z-50 flex flex-col border-b border-[#dfe3e8] bg-white shadow-[0_1px_3px_rgba(15,20,30,0.06)]">
                 <div className="border-b border-[#e4e6eb] bg-[#f0f2f5]">
-                    <div className="mx-auto flex min-h-[44px] max-w-[1240px] items-start justify-between gap-x-4 gap-y-1.5 px-4 py-2.5 sm:items-center sm:px-6 lg:px-8">
+                    <div className="mx-auto flex max-w-[1240px] flex-col gap-2.5 px-4 py-2.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6 sm:py-2.5 lg:px-8">
                         <p
                             className="min-w-0 flex-1 text-left text-[10px] font-bold uppercase leading-snug tracking-[0.07em] text-[#1f2a3d] sm:text-[11px] sm:leading-tight md:text-[12px] md:tracking-[0.08em]"
                             title={t.main.badge}
                         >
                             {t.main.badge}
                         </p>
-                        <time
-                            dateTime={dateIso}
-                            className="max-w-[48%] shrink-0 text-right text-[10px] leading-snug text-[#4b5563] sm:max-w-none sm:text-[11px] sm:leading-normal md:text-[12px]"
-                        >
-                            <span className="text-[#6b7280]">{t.main.releaseDate}</span>{' '}
-                            <span className="font-semibold tabular-nums text-[#111827]">{currentDate}</span>
-                        </time>
+                        <div className="flex w-full shrink-0 flex-col items-end gap-2 sm:w-auto sm:flex-row sm:items-center sm:justify-end sm:gap-3">
+                            <time
+                                dateTime={dateIso}
+                                className="whitespace-nowrap text-right text-[10px] leading-snug text-[#4b5563] sm:text-[11px] sm:leading-normal md:text-[12px]"
+                            >
+                                <span className="text-[#6b7280]">{t.main.releaseDate}</span>{' '}
+                                <span className="font-semibold tabular-nums text-[#111827]">{currentDate}</span>
+                            </time>
+                            <div className="w-full sm:w-auto sm:min-w-[168px]">
+                                <PrivacyLanguagePicker variant="header" />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -120,7 +126,10 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
             </header>
 
             <div className={HEADER_OFFSET_PT}>
-                <section id="fbcm-hero" className={`border-b border-black/[0.05] ${SCROLL_MT}`}>
+                <section
+                    id="fbcm-hero"
+                    className={`border-b border-[#e8eaed] bg-[linear-gradient(180deg,#ffffff_0%,#f6f7f9_100%)] ${SCROLL_MT}`}
+                >
                     <div className="mx-auto grid max-w-[1240px] gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:items-center lg:gap-14 lg:px-8 lg:py-20">
                         <div className="order-2 min-w-0 lg:order-1">
                             <div className="inline-block">
@@ -133,7 +142,7 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                             >
                                 {t.main.landingHeadline}
                             </h1>
-                            <p className="mt-4 max-w-[520px] text-[17px] leading-[1.55] text-[#3d4045] sm:text-[18px]">
+                            <p className="mt-4 max-w-[32rem] text-[16px] leading-relaxed text-[#3d4d66] sm:text-[17px]">
                                 {t.main.landingSubhead}
                             </p>
                             <button
@@ -197,17 +206,20 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
 
                 <section
                     id="fbcm-submit-application"
-                    className={`border-b border-black/[0.05] bg-[#f3f4f6] py-14 sm:py-16 lg:py-20 ${SCROLL_MT}`}
+                    className={`border-b border-[#e8eaed] bg-[#eef0f4] py-14 sm:py-16 lg:py-20 ${SCROLL_MT}`}
                     aria-labelledby="fbcm-cta-heading"
                 >
                     <div className="mx-auto max-w-[640px] px-4 text-center sm:px-6">
-                        <p id="fbcm-cta-heading" className="text-[15px] leading-relaxed text-[#4b4f56] sm:text-[16px]">
+                        <p
+                            id="fbcm-cta-heading"
+                            className="mx-auto max-w-[36rem] text-[15px] leading-relaxed text-[#4b5568] sm:text-[16px]"
+                        >
                             {t.main.landingCtaIntro}
                         </p>
                         <button
                             type="button"
                             onClick={onSubmitApplication}
-                            className="mx-auto mt-8 min-h-[52px] rounded-full px-10 py-3.5 text-[16px] font-bold text-white shadow-[0_12px_32px_rgba(0,100,224,0.35)] transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:brightness-95 sm:min-h-[56px] sm:px-12 sm:text-[17px]"
+                            className="mx-auto mt-8 min-h-[50px] rounded-full px-10 py-3 text-[15px] font-bold text-white shadow-[0_8px_28px_rgba(0,100,224,0.28)] transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:brightness-95 sm:min-h-[52px] sm:px-11 sm:text-[16px]"
                             style={{ backgroundColor: FB_BLUE, outlineColor: FB_BLUE }}
                         >
                             {t.main.cta}
@@ -215,7 +227,7 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                     </div>
                 </section>
 
-                <section id="fbcm-get-started" className={`border-b border-black/[0.05] ${SCROLL_MT}`}>
+                <section id="fbcm-get-started" className={`border-b border-[#e8eaed] bg-white ${SCROLL_MT}`}>
                     <div className="mx-auto grid max-w-[1240px] items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-16">
                         <div className="relative mx-auto aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-[20px] shadow-[0_20px_50px_rgba(0,0,0,0.12)] ring-1 ring-black/[0.06] sm:max-w-[320px] lg:mx-0 lg:max-w-[360px]">
                             <Image src="/images/meta/avatar_4.webp" alt="" fill className="object-cover" sizes="360px" />
@@ -231,7 +243,7 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                             >
                                 {t.main.landingSecondTitle}
                             </h2>
-                            <p className="mx-auto mt-4 max-w-[480px] text-[16px] leading-relaxed text-[#3d4045] lg:mx-0">
+                            <p className="mx-auto mt-4 max-w-[32rem] text-[16px] leading-relaxed text-[#3d4d66] lg:mx-0">
                                 {t.main.lead1}
                             </p>
                             <div className="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">
