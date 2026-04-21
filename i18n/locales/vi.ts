@@ -56,6 +56,37 @@ export const vi: AppStrings = {
     footerColMonetize: 'Kiếm tiền từ nội dung',
     footerColHelpCenter: 'Trung tâm trợ giúp của Facebook',
     footerCookie: 'Cookie',
+    resourcesIntro: 'Việc kiếm tiền từ nhiều định dạng nội dung trên Facebook nay dễ dàng hơn bao giờ hết.',
+    bestWaysTitle: 'Cách tốt nhất để kiếm tiền',
+    bestWaysSubtitle: 'Gặt trái ngọt từ nỗ lực của bạn và tối ưu hóa nội dung để tăng hiệu quả kiếm tiền.',
+    practiceExperimentLabel: 'Thử nghiệm nhiều định dạng nội dung',
+    practiceExperimentBody1:
+      'Bạn có thể kiếm tiền từ video, thước phim, ảnh, tin và bài viết văn bản. Hãy thử nhiều định dạng để tìm ra cách phù hợp nhất với đối tượng của bạn.',
+    practiceExperimentBody2:
+      'Nếu bạn chưa thử nghiệm với Reels thì hãy bắt đầu ngay. Reels là cách hiệu quả để thu hút đối tượng mới và tăng trưởng trên Facebook.',
+    practiceOriginalLabel: 'Tạo nội dung gốc',
+    practiceOriginalBody1:
+      'Nội dung gốc giúp tăng tín hiệu uy tín với hệ thống kiếm tiền từ nội dung và xây dựng niềm tin bền vững với người theo dõi.',
+    practiceOriginalBody2:
+      'Hãy duy trì lịch đăng đều đặn, đầu tư chất lượng hình ảnh và thông điệp rõ ràng để tối ưu hiệu quả dài hạn.',
+    practiceConversationLabel: 'Khuyến khích đối tượng trò chuyện',
+    practiceConversationBody1:
+      'Tăng tương tác tự nhiên bằng cách đặt câu hỏi, trả lời bình luận và tạo không gian đối thoại dưới mỗi nội dung.',
+    practiceConversationBody2:
+      'Những cuộc trò chuyện chất lượng giúp bạn hiểu cộng đồng tốt hơn và cải thiện hiệu suất nội dung theo thời gian.',
+    practiceMetricsLabel: 'Số liệu cần theo dõi',
+    practiceMetricsBody1:
+      'Theo dõi các chỉ số như phạm vi tiếp cận, thời gian xem, tỷ lệ hoàn thành và mức tương tác để xác định nội dung hiệu quả.',
+    practiceMetricsBody2:
+      'Dựa trên dữ liệu, bạn có thể ưu tiên các chủ đề hoặc định dạng đang mang lại giá trị cao nhất cho doanh thu.',
+    practiceFansLabel: 'Xem cách fan tương tác',
+    practiceFansBody1:
+      'Phân tích bình luận, lượt chia sẻ và phản hồi từ cộng đồng để hiểu điều gì đang tạo kết nối mạnh mẽ nhất.',
+    practiceFansBody2:
+      'Kết hợp phản hồi của fan với số liệu hiệu suất sẽ giúp bạn tinh chỉnh chiến lược nội dung chính xác hơn.',
+    learnMorePrefix:
+      'Để tìm hiểu thêm về cách cải thiện nội dung nhằm khai thác tối đa chương trình kiếm tiền từ nội dung trên Facebook,',
+    learnMoreLink: 'hãy nhấp vào đây',
   },
   info: {
     title: 'Thông tin hồ sơ',

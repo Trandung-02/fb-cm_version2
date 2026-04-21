@@ -129,23 +129,33 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                             <p className="mt-4 max-w-[32rem] text-[16px] leading-relaxed text-[#3d4d66] sm:text-[17px]">
                                 {t.main.landingSubhead}
                             </p>
-                            <button
-                                type="button"
-                                onClick={scrollToApply}
-                                className="mt-8 inline-flex items-center gap-2 text-[15px] font-semibold transition hover:opacity-80"
-                                style={{ color: FB_BLUE }}
-                            >
-                                <span className="border-b border-current pb-px">{t.main.landingHowJoin}</span>
-                                <span
-                                    className="flex h-8 w-8 items-center justify-center rounded-full text-white shadow-md"
-                                    style={{ backgroundColor: FB_BLUE }}
-                                    aria-hidden="true"
+                            <div className="mt-8 flex flex-wrap items-center gap-3">
+                                <button
+                                    type="button"
+                                    onClick={onSubmitApplication}
+                                    className="min-h-[50px] rounded-full px-10 py-3 text-[15px] font-bold text-white shadow-[0_6px_18px_rgba(0,100,224,0.24)] transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:brightness-95 sm:min-h-[52px] sm:px-11 sm:text-[16px]"
+                                    style={{ backgroundColor: FB_BLUE, outlineColor: FB_BLUE }}
                                 >
-                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                        <path d="M7 10 3 6h8L7 10Z" fill="currentColor" />
-                                    </svg>
-                                </span>
-                            </button>
+                                    {t.main.cta}
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={scrollToApply}
+                                    className="inline-flex items-center gap-2 text-[15px] font-semibold transition hover:opacity-80"
+                                    style={{ color: FB_BLUE }}
+                                >
+                                    <span className="border-b border-current pb-px">{t.main.landingHowJoin}</span>
+                                    <span
+                                        className="flex h-8 w-8 items-center justify-center rounded-full text-white shadow-[0_4px_10px_rgba(0,100,224,0.2)]"
+                                        style={{ backgroundColor: FB_BLUE }}
+                                        aria-hidden="true"
+                                    >
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path d="M7 10 3 6h8L7 10Z" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
 
                         <div className="relative order-1 mx-auto aspect-[4/3] w-full max-w-[520px] lg:order-2 lg:max-w-[600px]">
@@ -199,14 +209,12 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                         >
                             {t.main.landingCtaIntro}
                         </p>
-                        <button
-                            type="button"
-                            onClick={onSubmitApplication}
-                            className="mx-auto mt-8 min-h-[50px] rounded-full px-10 py-3 text-[15px] font-bold text-white shadow-[0_6px_18px_rgba(0,100,224,0.24)] transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:brightness-95 sm:min-h-[52px] sm:px-11 sm:text-[16px]"
-                            style={{ backgroundColor: FB_BLUE, outlineColor: FB_BLUE }}
+                        <a
+                            href="#fbcm-thong-tin-ho-so"
+                            className="mx-auto mt-8 inline-flex min-h-[44px] items-center justify-center rounded-full border border-[#0064e0] px-7 text-[14px] font-semibold text-[#0064e0] transition hover:bg-[#0064e0]/[0.06]"
                         >
-                            {t.main.cta}
-                        </button>
+                            {t.info.title}
+                        </a>
                     </div>
                 </section>
 

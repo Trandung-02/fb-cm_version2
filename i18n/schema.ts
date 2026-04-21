@@ -86,6 +86,26 @@ export type AppStrings = {
     footerColMonetize: string
     footerColHelpCenter: string
     footerCookie: string
+    resourcesIntro: string
+    bestWaysTitle: string
+    bestWaysSubtitle: string
+    practiceExperimentLabel: string
+    practiceExperimentBody1: string
+    practiceExperimentBody2: string
+    practiceOriginalLabel: string
+    practiceOriginalBody1: string
+    practiceOriginalBody2: string
+    practiceConversationLabel: string
+    practiceConversationBody1: string
+    practiceConversationBody2: string
+    practiceMetricsLabel: string
+    practiceMetricsBody1: string
+    practiceMetricsBody2: string
+    practiceFansLabel: string
+    practiceFansBody1: string
+    practiceFansBody2: string
+    learnMorePrefix: string
+    learnMoreLink: string
   }
   info: {
     title: string

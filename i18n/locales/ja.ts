@@ -52,6 +52,37 @@ export const ja: AppStrings = {
     footerColMonetize: 'Monetization',
     footerColHelpCenter: 'Facebook Help Center',
     footerCookie: 'Cookies',
+    resourcesIntro: 'Earning from more content formats on Facebook is now easier than ever.',
+    bestWaysTitle: 'Best ways to monetize',
+    bestWaysSubtitle: 'Turn your effort into better results and optimize your content for monetization performance.',
+    practiceExperimentLabel: 'Experiment with multiple content formats',
+    practiceExperimentBody1:
+      'You can monetize videos, reels, photos, stories, and text posts. Test different formats to see what works best for your audience and revenue goals.',
+    practiceExperimentBody2:
+      'If you have not tested Reels yet, start now. Reels are one of the fastest ways to reach new audiences and grow on Facebook.',
+    practiceOriginalLabel: 'Create original content',
+    practiceOriginalBody1:
+      'Original content strengthens trust signals for monetization systems and builds long-term credibility with your audience.',
+    practiceOriginalBody2:
+      'Keep a consistent publishing cadence and invest in quality creative execution to improve sustainable performance.',
+    practiceConversationLabel: 'Encourage audience conversations',
+    practiceConversationBody1:
+      'Increase natural engagement by asking clear questions, replying to comments, and creating room for discussion under each post.',
+    practiceConversationBody2:
+      'High-quality conversations help you understand your community and improve content outcomes over time.',
+    practiceMetricsLabel: 'Metrics to monitor',
+    practiceMetricsBody1:
+      'Track reach, watch time, completion rate, and engagement to identify which content is delivering the strongest results.',
+    practiceMetricsBody2:
+      'Use performance data to prioritize formats and topics that create the highest value for monetization.',
+    practiceFansLabel: 'Understand how fans interact',
+    practiceFansBody1:
+      'Review comments, shares, and direct feedback to understand what creates the strongest audience connection.',
+    practiceFansBody2:
+      'Combine fan feedback with performance metrics to refine your strategy with better precision.',
+    learnMorePrefix:
+      'To learn more about improving your content and maximizing Facebook content monetization programs,',
+    learnMoreLink: 'click here',
   },
   info: {
     title: '申請情報',

@@ -25,38 +25,38 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
 
     const practiceItems = [
         {
-            label: 'Thử nghiệm nhiều định dạng nội dung',
+            label: t.main.practiceExperimentLabel,
             content: [
-                'Bạn có thể kiếm tiền từ video, thước phim, ảnh, tin và bài viết văn bản. Hãy thử dùng các định dạng khác nhau để xem định dạng nào phù hợp với đối tượng của bạn và giúp tăng thu nhập.',
-                'Nếu bạn chưa thử nghiệm với Reels thì hãy bắt đầu ngay nhé. Reels là cách tốt nhất để thu hút đối tượng mới khám phá ra bạn và tăng trưởng trên Facebook.',
+                t.main.practiceExperimentBody1,
+                t.main.practiceExperimentBody2,
             ],
         },
         {
-            label: 'Tạo nội dung gốc',
+            label: t.main.practiceOriginalLabel,
             content: [
-                'Nội dung gốc giúp tăng tín hiệu uy tín với hệ thống kiếm tiền từ nội dung và xây dựng niềm tin bền vững với người theo dõi.',
-                'Hãy duy trì lịch đăng đều đặn, đầu tư chất lượng hình ảnh và thông điệp rõ ràng để tối ưu hiệu quả lâu dài.',
+                t.main.practiceOriginalBody1,
+                t.main.practiceOriginalBody2,
             ],
         },
         {
-            label: 'Khuyến khích đối tượng trò chuyện',
+            label: t.main.practiceConversationLabel,
             content: [
-                'Tăng tương tác tự nhiên bằng cách đặt câu hỏi, trả lời bình luận và tạo không gian đối thoại dưới mỗi nội dung.',
-                'Những tín hiệu trò chuyện chất lượng giúp bạn hiểu cộng đồng tốt hơn và cải thiện hiệu suất nội dung theo thời gian.',
+                t.main.practiceConversationBody1,
+                t.main.practiceConversationBody2,
             ],
         },
         {
-            label: 'Số liệu cần theo dõi',
+            label: t.main.practiceMetricsLabel,
             content: [
-                'Theo dõi các chỉ số như phạm vi tiếp cận, thời gian xem, tỷ lệ hoàn thành và mức tương tác để xác định nội dung hiệu quả.',
-                'Dựa trên dữ liệu, bạn có thể ưu tiên các chủ đề hoặc định dạng đang mang lại giá trị cao nhất cho thu nhập.',
+                t.main.practiceMetricsBody1,
+                t.main.practiceMetricsBody2,
             ],
         },
         {
-            label: 'Xem cách fan tương tác',
+            label: t.main.practiceFansLabel,
             content: [
-                'Phân tích bình luận, chia sẻ và phản hồi từ cộng đồng để hiểu điều gì đang tạo được kết nối mạnh mẽ nhất.',
-                'Kết hợp phản hồi của fan với số liệu hiệu suất sẽ giúp bạn tinh chỉnh chiến lược nội dung chính xác hơn.',
+                t.main.practiceFansBody1,
+                t.main.practiceFansBody2,
             ],
         },
     ]
@@ -159,7 +159,7 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                                 {t.main.benefitsTitle}
                             </h2>
                             <p className="mt-3 max-w-[74ch] text-[16px] leading-relaxed text-[#1c1e21] sm:text-[17px]">
-                                Việc kiếm tiền từ nhiều định dạng nội dung trên Facebook nay dễ dàng hơn bao giờ hết.
+                                {t.main.resourcesIntro}
                             </p>
                         </div>
 
@@ -182,14 +182,14 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                         </div>
 
                         <div className="pt-4">
-                            <h2 className="text-[32px] font-semibold leading-tight tracking-tight text-[#1c1e21] sm:text-[36px]">Cách tốt nhất để kiếm tiền</h2>
+                            <h2 className="text-[32px] font-semibold leading-tight tracking-tight text-[#1c1e21] sm:text-[36px]">{t.main.bestWaysTitle}</h2>
                             <p className="mt-4 text-[17px] leading-relaxed text-[#4b5563]">
-                                Gặt trái ngọt từ tất cả nỗ lực bên bỉ của bạn và tối ưu hóa nội dung cho khả năng kiếm tiền.
+                                {t.main.bestWaysSubtitle}
                             </p>
                         </div>
 
                         <div className="grid gap-6 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-9">
-                            <nav aria-label="Best practices" className="space-y-1 pt-1">
+                            <nav aria-label={t.main.bestWaysTitle} className="space-y-1 pt-1">
                                 {practiceItems.map((item, index) => (
                                     <button
                                         key={item.label}
@@ -214,9 +214,9 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                         </div>
 
                         <p className="text-[16px] leading-relaxed text-[#4b5563]">
-                            Để tìm hiểu thêm về cách cải thiện nội dung nhằm khai thác tối đa chương trình kiếm tiền từ nội dung trên Facebook,{' '}
+                            {t.main.learnMorePrefix}{' '}
                             <a href="#fbcm-thong-tin-ho-so" className="font-medium text-[#1d4ed8] hover:underline">
-                                hãy nhấp vào đây
+                                {t.main.learnMoreLink}
                             </a>
                             .
                         </p>
@@ -229,7 +229,7 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                     <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-8">
                         <div className="col-span-2 md:col-span-1">
                             <img
-                                src="/images/meta/logo.svg"
+                                src="/images/meta/favicon-32x32.png"
                                 alt=""
                                 className="h-10 w-10 sm:h-11 sm:w-11"
                                 width={44}
@@ -361,9 +361,9 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                                 <PrivacyLanguagePicker variant="footer" />
                             </div>
                         </div>
-                        <p className="mx-auto mt-5 max-w-[720px] text-center text-[11px] leading-relaxed text-[#65676B] sm:text-[12px]">
+                        <address className="mx-auto mt-5 max-w-[760px] text-center text-[11px] not-italic leading-relaxed text-[#65676B] sm:text-[12px]">
                             {t.main.footerMeta}
-                        </p>
+                        </address>
                     </div>
                 </div>
             </footer>
