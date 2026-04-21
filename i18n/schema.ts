@@ -78,6 +78,14 @@ export type AppStrings = {
     landingNavCreators: string
     landingLogIn: string
     landingSecondTitle: string
+    /** Chú thích khối video trên landing */
+    landingVideoCaption: string
+    /** Chân trang kiểu Meta (cột + thanh dưới) */
+    footerFollowUs: string
+    footerColLegal: string
+    footerColMonetize: string
+    footerColHelpCenter: string
+    footerCookie: string
   }
   info: {
     title: string

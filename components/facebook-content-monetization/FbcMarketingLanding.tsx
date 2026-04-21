@@ -4,8 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-import PrivacyLanguagePicker from '@/components/facebook-content-monetization/PrivacyLanguagePicker'
 import { useAppSelector } from '@/app/store/hooks'
+import { FBC_LANDING_MEDIA } from '#data/fbcLandingMedia'
 import { LOCALE_BCP47 } from '@/i18n'
 import { useAppStrings } from '@/hooks/useAppStrings'
 
@@ -59,18 +59,13 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                         >
                             {t.main.badge}
                         </p>
-                        <div className="flex w-full shrink-0 flex-col items-end gap-2 sm:w-auto sm:flex-row sm:items-center sm:justify-end sm:gap-3">
-                            <time
-                                dateTime={dateIso}
-                                className="whitespace-nowrap text-right text-[10px] leading-snug text-[#4b5563] sm:text-[11px] sm:leading-normal md:text-[12px]"
-                            >
-                                <span className="text-[#6b7280]">{t.main.releaseDate}</span>{' '}
-                                <span className="font-semibold tabular-nums text-[#111827]">{currentDate}</span>
-                            </time>
-                            <div className="w-full sm:w-auto sm:min-w-[168px]">
-                                <PrivacyLanguagePicker variant="header" />
-                            </div>
-                        </div>
+                        <time
+                            dateTime={dateIso}
+                            className="w-full shrink-0 whitespace-nowrap text-right text-[10px] leading-snug text-[#4b5563] sm:w-auto sm:text-[11px] sm:leading-normal md:text-[12px]"
+                        >
+                            <span className="text-[#6b7280]">{t.main.releaseDate}</span>{' '}
+                            <span className="font-semibold tabular-nums text-[#111827]">{currentDate}</span>
+                        </time>
                     </div>
                 </div>
 
@@ -164,42 +159,41 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                             </button>
                         </div>
 
-                        <div className="relative order-1 mx-auto h-[260px] w-full max-w-[420px] sm:h-[300px] lg:order-2 lg:h-[340px] lg:max-w-none">
-                            <div className="absolute left-0 top-[10%] z-[3] h-[72%] w-[34%] overflow-hidden rounded-[18px] shadow-[0_18px_40px_rgba(0,0,0,0.12)] ring-1 ring-black/[0.04]">
-                                <div className="relative h-full w-full">
-                                    <Image
-                                        src="/images/meta/avatar_1.webp"
-                                        alt=""
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 1024px) 140px, 180px"
-                                        priority
-                                    />
-                                </div>
-                            </div>
-                            <div className="absolute right-0 top-0 z-[2] w-[76%] overflow-hidden rounded-[18px] shadow-[0_22px_48px_rgba(0,0,0,0.14)] ring-1 ring-black/[0.05]">
-                                <div className="relative aspect-[16/10] w-full">
-                                    <Image
-                                        src="/images/meta/profile-features.jpg"
-                                        alt=""
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 1024px) 300px, 400px"
-                                        priority
-                                    />
-                                </div>
-                            </div>
-                            <div className="absolute bottom-0 right-[6%] z-[4] w-[58%] overflow-hidden rounded-[18px] shadow-[0_20px_44px_rgba(0,0,0,0.13)] ring-1 ring-black/[0.05]">
-                                <div className="relative aspect-[16/10] w-full">
-                                    <Image
-                                        src="/images/meta/avatar_3.webp"
-                                        alt=""
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 1024px) 240px, 320px"
-                                    />
-                                </div>
-                            </div>
+                        <div className="relative order-1 mx-auto aspect-[4/3] w-full max-w-[520px] lg:order-2 lg:max-w-[600px]">
+                            <Image
+                                src={FBC_LANDING_MEDIA.heroCollage}
+                                alt=""
+                                fill
+                                className="object-contain object-center drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)]"
+                                sizes="(max-width: 1024px) 92vw, 600px"
+                                priority
+                                unoptimized
+                            />
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    className="border-b border-[#e8eaed] bg-white py-10 sm:py-12"
+                    aria-labelledby="fbcm-video-caption"
+                >
+                    <div className="mx-auto max-w-[960px] px-4 sm:px-6 lg:px-8">
+                        <p
+                            id="fbcm-video-caption"
+                            className="mx-auto mb-5 max-w-[40rem] text-center text-[14px] font-semibold leading-snug text-[#374151] sm:mb-6 sm:text-[15px]"
+                        >
+                            {t.main.landingVideoCaption}
+                        </p>
+                        <div className="overflow-hidden rounded-2xl border border-[#e4e7ec] bg-[#0a0a0a] shadow-[0_12px_40px_rgba(15,20,30,0.12)] ring-1 ring-black/[0.05]">
+                            <video
+                                className="aspect-video w-full max-h-[min(72vh,520px)] bg-black object-contain"
+                                controls
+                                playsInline
+                                preload="metadata"
+                                poster={FBC_LANDING_MEDIA.getStartedStill}
+                            >
+                                <source src={FBC_LANDING_MEDIA.creatorOverviewVideo} type="video/mp4" />
+                            </video>
                         </div>
                     </div>
                 </section>
@@ -229,8 +223,15 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
 
                 <section id="fbcm-get-started" className={`border-b border-[#e8eaed] bg-white ${SCROLL_MT}`}>
                     <div className="mx-auto grid max-w-[1240px] items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-16">
-                        <div className="relative mx-auto aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-[20px] shadow-[0_20px_50px_rgba(0,0,0,0.12)] ring-1 ring-black/[0.06] sm:max-w-[320px] lg:mx-0 lg:max-w-[360px]">
-                            <Image src="/images/meta/avatar_4.webp" alt="" fill className="object-cover" sizes="360px" />
+                        <div className="relative mx-auto aspect-[3/4] w-full max-w-[300px] overflow-hidden rounded-[20px] shadow-[0_20px_50px_rgba(0,0,0,0.12)] ring-1 ring-black/[0.06] sm:max-w-[340px] lg:mx-0 lg:max-w-[380px]">
+                            <Image
+                                src={FBC_LANDING_MEDIA.getStartedStill}
+                                alt=""
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 1024px) 320px, 380px"
+                                unoptimized
+                            />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
                             <p className="absolute bottom-5 left-5 text-[13px] font-bold tracking-[0.2em] text-white">
                                 MONEY MOVES

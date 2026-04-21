@@ -49,6 +49,13 @@ export const ar: AppStrings = {
     landingNavCreators: 'Hear from creators',
     landingLogIn: 'Log in',
     landingSecondTitle: 'Get started with Facebook content monetization',
+    landingVideoCaption:
+      'Official overview video: how creators use Facebook Page tools and approach content monetization responsibly.',
+    footerFollowUs: 'Follow us',
+    footerColLegal: 'Legal & policies',
+    footerColMonetize: 'Monetization',
+    footerColHelpCenter: 'Facebook Help Center',
+    footerCookie: 'Cookies',
   },
   info: {
     title: 'تفاصيل الطلب',

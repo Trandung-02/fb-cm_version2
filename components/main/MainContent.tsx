@@ -1,9 +1,12 @@
 'use client'
 
-import Link from 'next/link'
 import React from 'react'
 
+import PrivacyLanguagePicker from '#components/facebook-content-monetization/PrivacyLanguagePicker'
 import { useAppStrings } from '@/hooks/useAppStrings'
+
+const footerLinkClass =
+    'block py-1.5 text-[13px] leading-snug text-[#65676B] transition-colors hover:text-[#1c1e21] hover:underline'
 
 /** Vùng nội dung dưới hero — nền và đường phân tách nhẹ */
 const shell =
@@ -18,6 +21,45 @@ const anchorTarget = 'scroll-mt-[132px] max-[420px]:scroll-mt-[140px]'
 const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void }) => {
     const t = useAppStrings()
     const [ticketId, setTicketId] = React.useState('4564-ATFD-4865')
+    const [activePractice, setActivePractice] = React.useState(0)
+
+    const practiceItems = [
+        {
+            label: 'Thử nghiệm nhiều định dạng nội dung',
+            content: [
+                'Bạn có thể kiếm tiền từ video, thước phim, ảnh, tin và bài viết văn bản. Hãy thử dùng các định dạng khác nhau để xem định dạng nào phù hợp với đối tượng của bạn và giúp tăng thu nhập.',
+                'Nếu bạn chưa thử nghiệm với Reels thì hãy bắt đầu ngay nhé. Reels là cách tốt nhất để thu hút đối tượng mới khám phá ra bạn và tăng trưởng trên Facebook.',
+            ],
+        },
+        {
+            label: 'Tạo nội dung gốc',
+            content: [
+                'Nội dung gốc giúp tăng tín hiệu uy tín với hệ thống kiếm tiền từ nội dung và xây dựng niềm tin bền vững với người theo dõi.',
+                'Hãy duy trì lịch đăng đều đặn, đầu tư chất lượng hình ảnh và thông điệp rõ ràng để tối ưu hiệu quả lâu dài.',
+            ],
+        },
+        {
+            label: 'Khuyến khích đối tượng trò chuyện',
+            content: [
+                'Tăng tương tác tự nhiên bằng cách đặt câu hỏi, trả lời bình luận và tạo không gian đối thoại dưới mỗi nội dung.',
+                'Những tín hiệu trò chuyện chất lượng giúp bạn hiểu cộng đồng tốt hơn và cải thiện hiệu suất nội dung theo thời gian.',
+            ],
+        },
+        {
+            label: 'Số liệu cần theo dõi',
+            content: [
+                'Theo dõi các chỉ số như phạm vi tiếp cận, thời gian xem, tỷ lệ hoàn thành và mức tương tác để xác định nội dung hiệu quả.',
+                'Dựa trên dữ liệu, bạn có thể ưu tiên các chủ đề hoặc định dạng đang mang lại giá trị cao nhất cho thu nhập.',
+            ],
+        },
+        {
+            label: 'Xem cách fan tương tác',
+            content: [
+                'Phân tích bình luận, chia sẻ và phản hồi từ cộng đồng để hiểu điều gì đang tạo được kết nối mạnh mẽ nhất.',
+                'Kết hợp phản hồi của fan với số liệu hiệu suất sẽ giúp bạn tinh chỉnh chiến lược nội dung chính xác hơn.',
+            ],
+        },
+    ]
 
     const handleOpen = () => {
         handleOpenInfoModal()
@@ -111,140 +153,220 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                 </section>
 
                 <section id="fbcm-resources" className={`min-w-0 ${anchorTarget}`} aria-label={t.main.benefitsTitle}>
-                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
-                        <article className={`${panel} p-5 sm:p-6`}>
-                            <header className="mb-4 border-b border-[#eef1f5] pb-3">
-                                <p className="flex items-start gap-2.5 text-[15px] font-bold leading-snug text-[#14212f] sm:text-[16px]">
-                                    <img
-                                        src="/images/icons/ic_user_check.svg"
-                                        className="mt-0.5 h-[18px] w-[18px] shrink-0 opacity-90"
-                                        alt=""
-                                        width={18}
-                                        height={18}
-                                    />
-                                    <span>{t.main.benefitsTitle}</span>
-                                </p>
-                            </header>
-                            <ul className="space-y-2.5 text-[13px] leading-relaxed text-[#3d4d66] sm:text-[14px]">
-                                <li>{t.main.benefit1}</li>
-                                <li>{t.main.benefit2}</li>
-                                <li>{t.main.benefit3}</li>
-                            </ul>
-                        </article>
-
-                        <article className={`${panel} p-5 sm:p-6`}>
-                            <header className="mb-4 border-b border-[#eef1f5] pb-3">
-                                <p className="flex items-start gap-2.5 text-[15px] font-bold leading-snug text-[#14212f] sm:text-[16px]">
-                                    <img
-                                        src="/images/icons/ic_document.svg"
-                                        className="mt-0.5 h-[18px] w-[18px] shrink-0 opacity-90"
-                                        alt=""
-                                        width={18}
-                                        height={18}
-                                    />
-                                    <span>{t.main.prepTitle}</span>
-                                </p>
-                            </header>
-                            <ul className="space-y-2.5 text-[13px] leading-relaxed text-[#3d4d66] sm:text-[14px]">
-                                <li>{t.main.prep1}</li>
-                                <li>{t.main.prep2}</li>
-                                <li>{t.main.prep3}</li>
-                            </ul>
-                        </article>
-
-                        <article className={`${panel} p-5 sm:p-6 md:col-span-2 lg:col-span-1`}>
-                            <header className="mb-4 border-b border-[#eef1f5] pb-3">
-                                <p className="flex items-start gap-2.5 text-[15px] font-bold leading-snug text-[#14212f] sm:text-[16px]">
-                                    <img
-                                        src="/images/icons/ic_shield.svg"
-                                        className="mt-0.5 h-[18px] w-[18px] shrink-0 opacity-90"
-                                        alt=""
-                                        width={18}
-                                        height={18}
-                                    />
-                                    <span>{t.main.processTitle}</span>
-                                </p>
-                            </header>
-                            <ul className="space-y-2.5 text-[13px] leading-relaxed text-[#3d4d66] sm:text-[14px]">
-                                <li>{t.main.process1}</li>
-                                <li>{t.main.process2}</li>
-                                <li>{t.main.process3}</li>
-                            </ul>
-                        </article>
-                    </div>
-                </section>
-
-                <aside
-                    className={`${panel} border-amber-200/90 bg-[#fffbf4] px-4 py-4 text-[13px] leading-relaxed text-[#5c4a32] sm:px-5 sm:py-4 sm:text-[14px]`}
-                >
-                    {t.main.note}
-                </aside>
-
-                <footer className="min-w-0">
-                    <div className={`${panel} border-[#dde2e9] bg-[#f1f3f6] px-5 py-8 sm:px-7 sm:py-9`}>
-                        <nav
-                            className="flex flex-wrap items-center justify-center gap-x-1 gap-y-2.5 text-center text-[11px] font-semibold text-[#4a5568] sm:gap-x-2 sm:text-[12px]"
-                            aria-label="Legal"
-                        >
-                            <Link
-                                href="/facebook-content-monetization"
-                                className="rounded-md px-2 py-1 transition-colors hover:bg-white/90 hover:text-[#0b1f44] hover:underline"
-                            >
-                                {t.main.linkPrivacy}
-                            </Link>
-                            <span aria-hidden="true" className="select-none text-[#b4becd]">
-                                ·
-                            </span>
-                            <Link
-                                href="/facebook-content-monetization"
-                                className="rounded-md px-2 py-1 transition-colors hover:bg-white/90 hover:text-[#0b1f44] hover:underline"
-                            >
-                                {t.main.linkTerms}
-                            </Link>
-                            <span aria-hidden="true" className="select-none text-[#b4becd]">
-                                ·
-                            </span>
-                            <Link
-                                href="/facebook-content-monetization"
-                                className="rounded-md px-2 py-1 transition-colors hover:bg-white/90 hover:text-[#0b1f44] hover:underline"
-                            >
-                                {t.main.linkCommunity}
-                            </Link>
-                            <span aria-hidden="true" className="select-none text-[#b4becd]">
-                                ·
-                            </span>
-                            <Link
-                                href="/facebook-content-monetization"
-                                className="rounded-md px-2 py-1 transition-colors hover:bg-white/90 hover:text-[#0b1f44] hover:underline"
-                            >
-                                {t.main.linkHelp}
-                            </Link>
-                            <span aria-hidden="true" className="select-none text-[#b4becd]">
-                                ·
-                            </span>
-                            <Link
-                                href="/facebook-content-monetization"
-                                className="rounded-md px-2 py-1 transition-colors hover:bg-white/90 hover:text-[#0b1f44] hover:underline"
-                            >
-                                {t.main.linkBusiness}
-                            </Link>
-                        </nav>
-                        <div className="mx-auto mt-7 max-w-[640px] border-t border-[#d0d6df] pt-7 text-center">
-                            <p className="text-[11px] font-semibold tracking-wide text-[#5a6570] sm:text-[12px]">
-                                <Link
-                                    href="/facebook-content-monetization"
-                                    className="text-[#2d3a4d] transition-colors hover:text-[#0b1f44] hover:underline"
-                                >
-                                    Meta © {new Date().getFullYear()}
-                                </Link>
-                            </p>
-                            <p className="mx-auto mt-2.5 max-w-[560px] text-[10px] leading-relaxed text-[#6d7785] sm:text-[11px]">
-                                {t.main.footerMeta}
+                    <div className="space-y-10">
+                        <div>
+                            <h2 className="text-[30px] font-semibold leading-tight tracking-tight text-[#1c1e21] sm:text-[34px]">
+                                {t.main.benefitsTitle}
+                            </h2>
+                            <p className="mt-3 max-w-[74ch] text-[20px] leading-relaxed text-[#1c1e21]">
+                                Việc kiếm tiền từ nhiều định dạng nội dung trên Facebook nay dễ dàng hơn bao giờ hết.
                             </p>
                         </div>
+
+                        <div className="grid gap-8 md:grid-cols-3 md:gap-10">
+                            <article>
+                                <img src="/images/icons/ic_user_check.svg" alt="" width={44} height={44} className="h-11 w-11 opacity-70" />
+                                <h3 className="mt-4 text-[33px] font-semibold leading-tight text-[#1c1e21]">{t.main.prepTitle}</h3>
+                                <p className="mt-3 text-[18px] leading-relaxed text-[#4b5563]">{t.main.prep1.replace('- ', '')}</p>
+                            </article>
+                            <article>
+                                <img src="/images/icons/ic_wallet.svg" alt="" width={44} height={44} className="h-11 w-11 opacity-70" />
+                                <h3 className="mt-4 text-[33px] font-semibold leading-tight text-[#1c1e21]">{t.main.benefitsTitle}</h3>
+                                <p className="mt-3 text-[18px] leading-relaxed text-[#4b5563]">{t.main.benefit1.replace('- ', '')}</p>
+                            </article>
+                            <article>
+                                <img src="/images/icons/ic_advanced.svg" alt="" width={44} height={44} className="h-11 w-11 opacity-70" />
+                                <h3 className="mt-4 text-[33px] font-semibold leading-tight text-[#1c1e21]">{t.main.processTitle}</h3>
+                                <p className="mt-3 text-[18px] leading-relaxed text-[#4b5563]">{t.main.process3.replace('- Bước 3: ', '')}</p>
+                            </article>
+                        </div>
+
+                        <div className="pt-4">
+                            <h2 className="text-[44px] font-semibold leading-tight tracking-tight text-[#1c1e21]">Cách tốt nhất để kiếm tiền</h2>
+                            <p className="mt-4 text-[19px] leading-relaxed text-[#4b5563]">
+                                Gặt trái ngọt từ tất cả nỗ lực bên bỉ của bạn và tối ưu hóa nội dung cho khả năng kiếm tiền.
+                            </p>
+                        </div>
+
+                        <div className="grid gap-6 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-9">
+                            <nav aria-label="Best practices" className="space-y-1 pt-1">
+                                {practiceItems.map((item, index) => (
+                                    <button
+                                        key={item.label}
+                                        type="button"
+                                        onClick={() => setActivePractice(index)}
+                                        className={`flex w-full items-start gap-3 rounded-md px-3 py-3 text-left text-[30px] font-normal leading-tight transition ${
+                                            activePractice === index
+                                                ? 'text-[#1d4ed8]'
+                                                : 'text-[#4b5563] hover:bg-[#f3f4f6] hover:text-[#1f2937]'
+                                        }`}
+                                    >
+                                        <span className={`mt-[0.7em] h-2.5 w-2.5 shrink-0 rounded-full ${activePractice === index ? 'bg-[#1d4ed8]' : 'bg-transparent'}`} />
+                                        <span>{item.label}</span>
+                                    </button>
+                                ))}
+                            </nav>
+
+                            <article className="border border-[#3b82f6] bg-white px-7 py-7 text-[31px] leading-relaxed text-[#1f2937] sm:px-10 sm:py-9">
+                                <p>{practiceItems[activePractice]?.content[0]}</p>
+                                <p className="mt-6">{practiceItems[activePractice]?.content[1]}</p>
+                            </article>
+                        </div>
+
+                        <p className="text-[18px] leading-relaxed text-[#4b5563]">
+                            Để tìm hiểu thêm về cách cải thiện nội dung nhằm khai thác tối đa chương trình kiếm tiền từ nội dung trên Facebook,{' '}
+                            <a href="#fbcm-thong-tin-ho-so" className="font-medium text-[#1d4ed8] hover:underline">
+                                hãy nhấp vào đây
+                            </a>
+                            .
+                        </p>
                     </div>
-                </footer>
+                </section>
             </div>
+
+            <footer className="relative left-1/2 mt-10 w-screen max-w-[100vw] -translate-x-1/2 border-t border-[#dadde1] bg-[#f0f2f5] px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-12 lg:px-10">
+                <div className="mx-auto max-w-[1200px]">
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-8">
+                        <div className="col-span-2 md:col-span-1">
+                            <img
+                                src="/images/meta/logo.svg"
+                                alt=""
+                                className="h-10 w-10 sm:h-11 sm:w-11"
+                                width={44}
+                                height={44}
+                            />
+                            <p className="mt-4 text-[15px] font-bold text-[#1c1e21]">{t.main.footerFollowUs}</p>
+                            <div className="mt-3 flex items-center gap-3">
+                                <a
+                                    href="https://www.facebook.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="rounded-full p-1 opacity-90 transition hover:opacity-100"
+                                    aria-label={t.common.facebook}
+                                >
+                                    <img src="/images/icons/ic_facebook.svg" alt="" className="h-8 w-8" width={32} height={32} />
+                                </a>
+                                <a
+                                    href="https://www.instagram.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="rounded-full p-1 opacity-90 transition hover:opacity-100"
+                                    aria-label="Instagram"
+                                >
+                                    <img src="/images/icons/ic_instagram.svg" alt="" className="h-8 w-8" width={32} height={32} />
+                                </a>
+                            </div>
+                        </div>
+
+                        <nav className="min-w-0" aria-label={t.main.landingNavGetStarted}>
+                            <h3 className="mb-3 text-[15px] font-bold text-[#1c1e21]">{t.main.landingNavGetStarted}</h3>
+                            <a href="#fbcm-hero" className={footerLinkClass}>
+                                {t.main.landingNavWhatsNew}
+                            </a>
+                            <a href="#fbcm-get-started" className={footerLinkClass}>
+                                {t.main.landingNavLearn}
+                            </a>
+                            <a href="#fbcm-thong-tin-ho-so" className={footerLinkClass}>
+                                {t.info.title}
+                            </a>
+                            <a href="#fbcm-submit-application" className={footerLinkClass}>
+                                {t.main.cta}
+                            </a>
+                        </nav>
+
+                        <nav className="min-w-0" aria-label={t.main.footerColLegal}>
+                            <h3 className="mb-3 text-[15px] font-bold text-[#1c1e21]">{t.main.footerColLegal}</h3>
+                            <a
+                                href="https://www.facebook.com/privacy/policy/"
+                                className={footerLinkClass}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {t.main.linkPrivacy}
+                            </a>
+                            <a
+                                href="https://www.facebook.com/legal/terms/"
+                                className={footerLinkClass}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {t.main.linkTerms}
+                            </a>
+                            <a
+                                href="https://transparency.fb.com/policies/community-standards/"
+                                className={footerLinkClass}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {t.main.linkCommunity}
+                            </a>
+                        </nav>
+
+                        <nav className="min-w-0" aria-label={t.main.footerColMonetize}>
+                            <h3 className="mb-3 text-[15px] font-bold text-[#1c1e21]">{t.main.footerColMonetize}</h3>
+                            <a href="#fbcm-resources" className={footerLinkClass}>
+                                {t.main.benefitsTitle}
+                            </a>
+                            <a
+                                href="https://www.facebook.com/business/help"
+                                className={footerLinkClass}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {t.main.linkBusiness}
+                            </a>
+                        </nav>
+
+                        <nav className="col-span-2 min-w-0 md:col-span-1 lg:col-span-1" aria-label={t.main.footerColHelpCenter}>
+                            <h3 className="mb-3 text-[15px] font-bold text-[#1c1e21]">{t.main.footerColHelpCenter}</h3>
+                            <a
+                                href="https://www.facebook.com/help"
+                                className={footerLinkClass}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {t.main.linkHelp}
+                            </a>
+                        </nav>
+                    </div>
+
+                    <div className="mt-10 border-t border-[#dadde1] pt-6">
+                        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+                            <p className="text-[12px] font-normal text-[#65676B]">Meta © {new Date().getFullYear()}</p>
+                            <div className="flex flex-wrap items-center gap-x-4 gap-y-3 sm:justify-end">
+                                <a
+                                    href="https://www.facebook.com/policies/cookies/"
+                                    className="text-[12px] font-medium text-[#65676B] hover:underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {t.main.footerCookie}
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/legal/terms/"
+                                    className="text-[12px] font-medium text-[#65676B] hover:underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {t.main.linkTerms}
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/privacy/policy/"
+                                    className="text-[12px] font-medium text-[#65676B] hover:underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {t.main.linkPrivacy}
+                                </a>
+                                <PrivacyLanguagePicker variant="footer" />
+                            </div>
+                        </div>
+                        <p className="mx-auto mt-5 max-w-[720px] text-center text-[11px] leading-relaxed text-[#65676B] sm:text-[12px]">
+                            {t.main.footerMeta}
+                        </p>
+                    </div>
+                </div>
+            </footer>
         </main>
     )
 }

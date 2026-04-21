@@ -49,6 +49,13 @@ export const vi: AppStrings = {
     landingNavCreators: 'Ý kiến từ nhà sáng tạo',
     landingLogIn: 'Đăng nhập',
     landingSecondTitle: 'Bắt đầu với kiếm tiền từ nội dung trên Facebook',
+    landingVideoCaption:
+      'Video giới thiệu chính thức: cách nhà sáng tạo dùng công cụ Trang Facebook và tiếp cận kiếm tiền từ nội dung một cách phù hợp.',
+    footerFollowUs: 'Theo dõi chúng tôi',
+    footerColLegal: 'Chính sách & quy định',
+    footerColMonetize: 'Kiếm tiền từ nội dung',
+    footerColHelpCenter: 'Trung tâm trợ giúp của Facebook',
+    footerCookie: 'Cookie',
   },
   info: {
     title: 'Thông tin hồ sơ',
