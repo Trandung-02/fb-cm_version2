@@ -10,12 +10,12 @@ import { LOCALE_BCP47 } from '@/i18n'
 import { useAppStrings } from '@/hooks/useAppStrings'
 
 const FB_BLUE = '#0064e0'
-/** Hàng meta + hàng nav cố định (đồng bộ scroll-mt nội dung) */
-const HEADER_OFFSET_PT = 'pt-[132px] max-[420px]:pt-[140px]'
-const SCROLL_MT = 'scroll-mt-[132px] max-[420px]:scroll-mt-[140px]'
+/** Header 1 hàng cố định (đồng bộ scroll-mt nội dung) */
+const HEADER_OFFSET_PT = 'pt-[64px]'
+const SCROLL_MT = 'scroll-mt-[76px]'
 
 const navLinkClass =
-    'inline-flex items-center gap-1 rounded-md px-2 py-1.5 text-[14px] font-semibold text-[#0A1317] transition-colors hover:bg-[#f0f2f5] hover:text-[#0064e0] sm:text-[15px]'
+    'inline-flex items-center gap-1 rounded-md px-2 py-1.5 text-[13px] font-medium text-[#1c1e21] transition-colors hover:bg-[#f0f2f5] hover:text-[#0064e0] sm:text-[14px]'
 
 type FbcMarketingLandingProps = {
     onSubmitApplication: () => void
@@ -50,26 +50,8 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
 
     return (
         <div className="min-h-[100dvh] scroll-smooth bg-[#f6f7f9] text-[#1c1e21] antialiased">
-            <header className="fixed inset-x-0 top-0 z-50 flex flex-col border-b border-[#dfe3e8] bg-white shadow-[0_1px_3px_rgba(15,20,30,0.06)]">
-                <div className="border-b border-[#e4e6eb] bg-[#f0f2f5]">
-                    <div className="mx-auto flex max-w-[1240px] flex-col gap-2.5 px-4 py-2.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6 sm:py-2.5 lg:px-8">
-                        <p
-                            className="min-w-0 flex-1 text-left text-[10px] font-bold uppercase leading-snug tracking-[0.07em] text-[#1f2a3d] sm:text-[11px] sm:leading-tight md:text-[12px] md:tracking-[0.08em]"
-                            title={t.main.badge}
-                        >
-                            {t.main.badge}
-                        </p>
-                        <time
-                            dateTime={dateIso}
-                            className="w-full shrink-0 whitespace-nowrap text-right text-[10px] leading-snug text-[#4b5563] sm:w-auto sm:text-[11px] sm:leading-normal md:text-[12px]"
-                        >
-                            <span className="text-[#6b7280]">{t.main.releaseDate}</span>{' '}
-                            <span className="font-semibold tabular-nums text-[#111827]">{currentDate}</span>
-                        </time>
-                    </div>
-                </div>
-
-                <div className="mx-auto flex h-16 w-full max-w-[1240px] items-center gap-2 border-t border-white/90 bg-white px-4 sm:gap-3 sm:px-6 lg:px-8">
+            <header className="fixed inset-x-0 top-0 z-50 border-b border-[#dfe3e8] bg-white shadow-[0_1px_2px_rgba(15,20,30,0.05)]">
+                <div className="mx-auto flex h-16 w-full max-w-[1240px] items-center gap-2 px-4 sm:gap-3 sm:px-6 lg:px-8">
                     <Link
                         href="/facebook-content-monetization#fbcm-hero"
                         className="flex shrink-0 items-center rounded-md p-1 transition hover:bg-[#f0f2f5]"
@@ -96,6 +78,13 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                     </nav>
 
                     <div className="ml-auto flex items-center gap-0.5 sm:gap-1">
+                        <time
+                            dateTime={dateIso}
+                            className="mr-1 hidden shrink-0 whitespace-nowrap text-[11px] leading-none text-[#606770] lg:block"
+                        >
+                            <span className="text-[#6b7280]">{t.main.releaseDate}</span>{' '}
+                            <span className="font-semibold tabular-nums text-[#111827]">{currentDate}</span>
+                        </time>
                         <a
                             href="#fbcm-thong-tin-ho-so"
                             className="rounded-full p-2.5 text-[#0A1317] opacity-85 transition hover:bg-[#f0f2f5] hover:opacity-100"
@@ -112,7 +101,7 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                         </a>
                         <a
                             href="#fbcm-thong-tin-ho-so"
-                            className="ml-1 inline-flex items-center rounded-full border border-[#CCD0D5] bg-white px-4 py-2 text-[13px] font-bold text-[#0A1317] shadow-sm transition hover:border-[#bcc0c4] hover:bg-[#fafbfc] sm:px-5 sm:text-[14px]"
+                            className="ml-1 inline-flex items-center rounded-full border border-[#ccd0d5] bg-white px-4 py-2 text-[13px] font-semibold text-[#1c1e21] transition hover:border-[#bcc0c4] hover:bg-[#fafbfc] sm:px-5 sm:text-[14px]"
                         >
                             {t.main.landingLogIn}
                         </a>
@@ -164,7 +153,7 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                                 src={FBC_LANDING_MEDIA.heroCollage}
                                 alt=""
                                 fill
-                                className="object-contain object-center drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)]"
+                                className="object-contain object-center drop-shadow-[0_12px_28px_rgba(0,0,0,0.10)]"
                                 sizes="(max-width: 1024px) 92vw, 600px"
                                 priority
                                 unoptimized
@@ -184,7 +173,7 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                         >
                             {t.main.landingVideoCaption}
                         </p>
-                        <div className="overflow-hidden rounded-2xl border border-[#e4e7ec] bg-[#0a0a0a] shadow-[0_12px_40px_rgba(15,20,30,0.12)] ring-1 ring-black/[0.05]">
+                        <div className="overflow-hidden rounded-2xl border border-[#e4e7ec] bg-[#0a0a0a] shadow-[0_8px_24px_rgba(15,20,30,0.10)] ring-1 ring-black/[0.04]">
                             <video
                                 className="aspect-video w-full max-h-[min(72vh,520px)] bg-black object-contain"
                                 controls
@@ -213,7 +202,7 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                         <button
                             type="button"
                             onClick={onSubmitApplication}
-                            className="mx-auto mt-8 min-h-[50px] rounded-full px-10 py-3 text-[15px] font-bold text-white shadow-[0_8px_28px_rgba(0,100,224,0.28)] transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:brightness-95 sm:min-h-[52px] sm:px-11 sm:text-[16px]"
+                            className="mx-auto mt-8 min-h-[50px] rounded-full px-10 py-3 text-[15px] font-bold text-white shadow-[0_6px_18px_rgba(0,100,224,0.24)] transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:brightness-95 sm:min-h-[52px] sm:px-11 sm:text-[16px]"
                             style={{ backgroundColor: FB_BLUE, outlineColor: FB_BLUE }}
                         >
                             {t.main.cta}
@@ -223,7 +212,7 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
 
                 <section id="fbcm-get-started" className={`border-b border-[#e8eaed] bg-white ${SCROLL_MT}`}>
                     <div className="mx-auto grid max-w-[1240px] items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-16">
-                        <div className="relative mx-auto aspect-[3/4] w-full max-w-[300px] overflow-hidden rounded-[20px] shadow-[0_20px_50px_rgba(0,0,0,0.12)] ring-1 ring-black/[0.06] sm:max-w-[340px] lg:mx-0 lg:max-w-[380px]">
+                        <div className="relative mx-auto aspect-[3/4] w-full max-w-[300px] overflow-hidden rounded-[20px] shadow-[0_12px_32px_rgba(0,0,0,0.10)] ring-1 ring-black/[0.05] sm:max-w-[340px] lg:mx-0 lg:max-w-[380px]">
                             <Image
                                 src={FBC_LANDING_MEDIA.getStartedStill}
                                 alt=""
@@ -250,7 +239,7 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                             <div className="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">
                                 <a
                                     href="#fbcm-thong-tin-ho-so"
-                                    className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-[#CCD0D5] bg-white px-6 text-[14px] font-bold text-[#0A1317] shadow-sm transition hover:border-[#bcc0c4] hover:bg-[#fafbfc]"
+                                    className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-[#ccd0d5] bg-white px-6 text-[14px] font-semibold text-[#1c1e21] transition hover:border-[#bcc0c4] hover:bg-[#fafbfc]"
                                 >
                                     {t.main.landingNavGetStarted}
                                 </a>

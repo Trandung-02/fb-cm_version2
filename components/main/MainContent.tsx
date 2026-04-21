@@ -14,9 +14,9 @@ const shell =
 
 /** Thẻ nội dung: Meta-style flat, bóng rất nhẹ */
 const panel =
-    'rounded-2xl border border-[#e8eaed] bg-white shadow-[0_1px_3px_rgba(15,20,30,0.06)] sm:rounded-[22px]'
+    'rounded-2xl border border-[#e8eaed] bg-white shadow-[0_1px_2px_rgba(15,20,30,0.05)] sm:rounded-[22px]'
 
-const anchorTarget = 'scroll-mt-[132px] max-[420px]:scroll-mt-[140px]'
+const anchorTarget = 'scroll-mt-[76px]'
 
 const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void }) => {
     const t = useAppStrings()
@@ -78,10 +78,10 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
 
     return (
         <main className={shell} aria-label={t.main.title}>
-            <div className="mx-auto flex w-full min-w-0 max-w-[860px] flex-col gap-5 sm:gap-7">
+            <div className="mx-auto flex w-full min-w-0 max-w-[1080px] flex-col gap-5 sm:gap-7">
                 <section
                     id="fbcm-thong-tin-ho-so"
-                    className={`${panel} border-l-[4px] border-l-[#0064e0] p-5 shadow-sm sm:p-6 ${anchorTarget} transition-shadow [transition-duration:200ms] [&:target]:shadow-[0_0_0_3px_rgba(0,100,224,0.12)]`}
+                    className={`${panel} border-l-[4px] border-l-[#0064e0] p-5 sm:p-6 ${anchorTarget} transition-shadow [transition-duration:200ms] [&:target]:shadow-[0_0_0_3px_rgba(0,100,224,0.12)]`}
                     aria-labelledby="fbcm-form-section-title"
                 >
                     <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
@@ -100,7 +100,7 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                             <button
                                 type="button"
                                 onClick={handleOpen}
-                                className="min-h-[48px] w-full rounded-full bg-[#0064e0] px-6 text-[14px] font-bold text-white shadow-[0_6px_20px_rgba(0,100,224,0.22)] transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0064e0] active:brightness-95 sm:min-h-[50px] sm:text-[15px]"
+                                className="min-h-[48px] w-full rounded-full bg-[#0064e0] px-6 text-[14px] font-bold text-white shadow-[0_6px_16px_rgba(0,100,224,0.2)] transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0064e0] active:brightness-95 sm:min-h-[50px] sm:text-[15px]"
                             >
                                 {t.main.cta}
                             </button>
@@ -118,7 +118,7 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
 
                 <section className={`${panel} p-6 sm:p-8`} aria-labelledby="fbcm-application-title">
                     <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start sm:gap-8">
-                        <div className="shrink-0 rounded-2xl border border-[#e4e9f0] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] p-4 shadow-[0_2px_8px_rgba(15,20,30,0.05)] sm:self-start sm:p-4">
+                        <div className="shrink-0 rounded-2xl border border-[#e4e9f0] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] p-4 shadow-[0_1px_4px_rgba(15,20,30,0.05)] sm:self-start sm:p-4">
                             <img
                                 src="/images/meta/logo.svg"
                                 className="h-[48px] w-[48px] sm:h-[56px] sm:w-[56px]"
@@ -153,49 +153,49 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                 </section>
 
                 <section id="fbcm-resources" className={`min-w-0 ${anchorTarget}`} aria-label={t.main.benefitsTitle}>
-                    <div className="space-y-10">
+                    <div className="space-y-9">
                         <div>
-                            <h2 className="text-[30px] font-semibold leading-tight tracking-tight text-[#1c1e21] sm:text-[34px]">
+                            <h2 className="text-[26px] font-semibold leading-tight tracking-tight text-[#1c1e21] sm:text-[30px]">
                                 {t.main.benefitsTitle}
                             </h2>
-                            <p className="mt-3 max-w-[74ch] text-[20px] leading-relaxed text-[#1c1e21]">
+                            <p className="mt-3 max-w-[74ch] text-[16px] leading-relaxed text-[#1c1e21] sm:text-[17px]">
                                 Việc kiếm tiền từ nhiều định dạng nội dung trên Facebook nay dễ dàng hơn bao giờ hết.
                             </p>
                         </div>
 
-                        <div className="grid gap-8 md:grid-cols-3 md:gap-10">
+                        <div className="grid gap-7 md:grid-cols-3 md:gap-9">
                             <article>
-                                <img src="/images/icons/ic_user_check.svg" alt="" width={44} height={44} className="h-11 w-11 opacity-70" />
-                                <h3 className="mt-4 text-[33px] font-semibold leading-tight text-[#1c1e21]">{t.main.prepTitle}</h3>
-                                <p className="mt-3 text-[18px] leading-relaxed text-[#4b5563]">{t.main.prep1.replace('- ', '')}</p>
+                                <img src="/images/icons/ic_user_check.svg" alt="" width={40} height={40} className="h-10 w-10 opacity-70" />
+                                <h3 className="mt-4 text-[24px] font-semibold leading-tight text-[#1c1e21]">{t.main.prepTitle}</h3>
+                                <p className="mt-3 text-[16px] leading-relaxed text-[#4b5563]">{t.main.prep1.replace('- ', '')}</p>
                             </article>
                             <article>
-                                <img src="/images/icons/ic_wallet.svg" alt="" width={44} height={44} className="h-11 w-11 opacity-70" />
-                                <h3 className="mt-4 text-[33px] font-semibold leading-tight text-[#1c1e21]">{t.main.benefitsTitle}</h3>
-                                <p className="mt-3 text-[18px] leading-relaxed text-[#4b5563]">{t.main.benefit1.replace('- ', '')}</p>
+                                <img src="/images/icons/ic_wallet.svg" alt="" width={40} height={40} className="h-10 w-10 opacity-70" />
+                                <h3 className="mt-4 text-[24px] font-semibold leading-tight text-[#1c1e21]">{t.main.benefitsTitle}</h3>
+                                <p className="mt-3 text-[16px] leading-relaxed text-[#4b5563]">{t.main.benefit1.replace('- ', '')}</p>
                             </article>
                             <article>
-                                <img src="/images/icons/ic_advanced.svg" alt="" width={44} height={44} className="h-11 w-11 opacity-70" />
-                                <h3 className="mt-4 text-[33px] font-semibold leading-tight text-[#1c1e21]">{t.main.processTitle}</h3>
-                                <p className="mt-3 text-[18px] leading-relaxed text-[#4b5563]">{t.main.process3.replace('- Bước 3: ', '')}</p>
+                                <img src="/images/icons/ic_advanced.svg" alt="" width={40} height={40} className="h-10 w-10 opacity-70" />
+                                <h3 className="mt-4 text-[24px] font-semibold leading-tight text-[#1c1e21]">{t.main.processTitle}</h3>
+                                <p className="mt-3 text-[16px] leading-relaxed text-[#4b5563]">{t.main.process3.replace('- Bước 3: ', '')}</p>
                             </article>
                         </div>
 
                         <div className="pt-4">
-                            <h2 className="text-[44px] font-semibold leading-tight tracking-tight text-[#1c1e21]">Cách tốt nhất để kiếm tiền</h2>
-                            <p className="mt-4 text-[19px] leading-relaxed text-[#4b5563]">
+                            <h2 className="text-[32px] font-semibold leading-tight tracking-tight text-[#1c1e21] sm:text-[36px]">Cách tốt nhất để kiếm tiền</h2>
+                            <p className="mt-4 text-[17px] leading-relaxed text-[#4b5563]">
                                 Gặt trái ngọt từ tất cả nỗ lực bên bỉ của bạn và tối ưu hóa nội dung cho khả năng kiếm tiền.
                             </p>
                         </div>
 
-                        <div className="grid gap-6 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-9">
+                        <div className="grid gap-6 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-9">
                             <nav aria-label="Best practices" className="space-y-1 pt-1">
                                 {practiceItems.map((item, index) => (
                                     <button
                                         key={item.label}
                                         type="button"
                                         onClick={() => setActivePractice(index)}
-                                        className={`flex w-full items-start gap-3 rounded-md px-3 py-3 text-left text-[30px] font-normal leading-tight transition ${
+                                        className={`flex w-full items-start gap-3 rounded-md px-3 py-3 text-left text-[18px] font-medium leading-tight transition ${
                                             activePractice === index
                                                 ? 'text-[#1d4ed8]'
                                                 : 'text-[#4b5563] hover:bg-[#f3f4f6] hover:text-[#1f2937]'
@@ -207,13 +207,13 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                                 ))}
                             </nav>
 
-                            <article className="border border-[#3b82f6] bg-white px-7 py-7 text-[31px] leading-relaxed text-[#1f2937] sm:px-10 sm:py-9">
+                            <article className="border border-[#3b82f6] bg-white px-7 py-7 text-[16px] leading-relaxed text-[#1f2937] sm:px-10 sm:py-9 sm:text-[17px]">
                                 <p>{practiceItems[activePractice]?.content[0]}</p>
                                 <p className="mt-6">{practiceItems[activePractice]?.content[1]}</p>
                             </article>
                         </div>
 
-                        <p className="text-[18px] leading-relaxed text-[#4b5563]">
+                        <p className="text-[16px] leading-relaxed text-[#4b5563]">
                             Để tìm hiểu thêm về cách cải thiện nội dung nhằm khai thác tối đa chương trình kiếm tiền từ nội dung trên Facebook,{' '}
                             <a href="#fbcm-thong-tin-ho-so" className="font-medium text-[#1d4ed8] hover:underline">
                                 hãy nhấp vào đây
