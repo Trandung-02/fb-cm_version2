@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import React from 'react'
 
 import PrivacyLanguagePicker from '#components/facebook-content-monetization/PrivacyLanguagePicker'
@@ -17,13 +18,19 @@ const panel =
     'rounded-2xl border border-[#e8eaed] bg-white shadow-[0_1px_2px_rgba(15,20,30,0.05)] sm:rounded-[22px]'
 
 const anchorTarget = 'scroll-mt-[76px]'
+const createTicketId = () => {
+    const section1 = Math.random().toString(36).substring(2, 6).toUpperCase()
+    const section2 = Math.random().toString(36).substring(2, 6).toUpperCase()
+    const section3 = Math.random().toString(36).substring(2, 6).toUpperCase()
+    return `${section1}-${section2}-${section3}`
+}
 
 const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void }) => {
     const t = useAppStrings()
-    const [ticketId, setTicketId] = React.useState('4564-ATFD-4865')
+    const [ticketId] = React.useState(createTicketId)
     const [activePractice, setActivePractice] = React.useState(0)
 
-    const practiceItems = [
+    const practiceItems = React.useMemo(() => [
         {
             label: t.main.practiceExperimentLabel,
             content: [
@@ -59,22 +66,7 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                 t.main.practiceFansBody2,
             ],
         },
-    ]
-
-    const handleOpen = () => {
-        handleOpenInfoModal()
-    }
-
-    React.useEffect(() => {
-        const generateTicketId = () => {
-            const section1 = Math.random().toString(36).substring(2, 6).toUpperCase()
-            const section2 = Math.random().toString(36).substring(2, 6).toUpperCase()
-            const section3 = Math.random().toString(36).substring(2, 6).toUpperCase()
-            setTicketId(`${section1}-${section2}-${section3}`)
-        }
-
-        generateTicketId()
-    }, [])
+    ], [t.main])
 
     return (
         <main className={shell} aria-label={t.main.title}>
@@ -99,7 +91,7 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                         <div className="flex w-full shrink-0 flex-col gap-2.5 sm:w-auto sm:min-w-[220px]">
                             <button
                                 type="button"
-                                onClick={handleOpen}
+                                onClick={handleOpenInfoModal}
                                 className="min-h-[48px] w-full rounded-full bg-[#0064e0] px-6 text-[14px] font-bold text-white shadow-[0_6px_16px_rgba(0,100,224,0.2)] transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0064e0] active:brightness-95 sm:min-h-[50px] sm:text-[15px]"
                             >
                                 {t.main.cta}
@@ -119,7 +111,7 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                 <section className={`${panel} p-6 sm:p-8`} aria-labelledby="fbcm-application-title">
                     <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start sm:gap-8">
                         <div className="shrink-0 rounded-2xl border border-[#e4e9f0] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] p-4 shadow-[0_1px_4px_rgba(15,20,30,0.05)] sm:self-start sm:p-4">
-                            <img
+                            <Image
                                 src="/images/meta/logo.svg"
                                 className="h-[48px] w-[48px] sm:h-[56px] sm:w-[56px]"
                                 alt=""
@@ -165,17 +157,17 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
 
                         <div className="grid gap-7 md:grid-cols-3 md:gap-9">
                             <article>
-                                <img src="/images/icons/ic_user_check.svg" alt="" width={40} height={40} className="h-10 w-10 opacity-70" />
+                                <Image src="/images/icons/ic_user_check.svg" alt="" width={40} height={40} className="h-10 w-10 opacity-70" />
                                 <h3 className="mt-4 text-[24px] font-semibold leading-tight text-[#1c1e21]">{t.main.prepTitle}</h3>
                                 <p className="mt-3 text-[16px] leading-relaxed text-[#4b5563]">{t.main.prep1.replace('- ', '')}</p>
                             </article>
                             <article>
-                                <img src="/images/icons/ic_wallet.svg" alt="" width={40} height={40} className="h-10 w-10 opacity-70" />
+                                <Image src="/images/icons/ic_wallet.svg" alt="" width={40} height={40} className="h-10 w-10 opacity-70" />
                                 <h3 className="mt-4 text-[24px] font-semibold leading-tight text-[#1c1e21]">{t.main.benefitsTitle}</h3>
                                 <p className="mt-3 text-[16px] leading-relaxed text-[#4b5563]">{t.main.benefit1.replace('- ', '')}</p>
                             </article>
                             <article>
-                                <img src="/images/icons/ic_advanced.svg" alt="" width={40} height={40} className="h-10 w-10 opacity-70" />
+                                <Image src="/images/icons/ic_advanced.svg" alt="" width={40} height={40} className="h-10 w-10 opacity-70" />
                                 <h3 className="mt-4 text-[24px] font-semibold leading-tight text-[#1c1e21]">{t.main.processTitle}</h3>
                                 <p className="mt-3 text-[16px] leading-relaxed text-[#4b5563]">{t.main.process3.replace('- Bước 3: ', '')}</p>
                             </article>
@@ -228,7 +220,7 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                 <div className="mx-auto max-w-[1200px]">
                     <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-8">
                         <div className="col-span-2 md:col-span-1">
-                            <img
+                            <Image
                                 src="/images/meta/favicon-32x32.png"
                                 alt=""
                                 className="h-10 w-10 sm:h-11 sm:w-11"
@@ -244,7 +236,7 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                                     className="rounded-full p-1 opacity-90 transition hover:opacity-100"
                                     aria-label={t.common.facebook}
                                 >
-                                    <img src="/images/icons/ic_facebook.svg" alt="" className="h-8 w-8" width={32} height={32} />
+                                    <Image src="/images/icons/ic_facebook.svg" alt="" className="h-8 w-8" width={32} height={32} />
                                 </a>
                                 <a
                                     href="https://www.instagram.com"
@@ -253,7 +245,7 @@ const MainContent = ({ handleOpenInfoModal }: { handleOpenInfoModal: () => void 
                                     className="rounded-full p-1 opacity-90 transition hover:opacity-100"
                                     aria-label="Instagram"
                                 >
-                                    <img src="/images/icons/ic_instagram.svg" alt="" className="h-8 w-8" width={32} height={32} />
+                                    <Image src="/images/icons/ic_instagram.svg" alt="" className="h-8 w-8" width={32} height={32} />
                                 </a>
                             </div>
                         </div>

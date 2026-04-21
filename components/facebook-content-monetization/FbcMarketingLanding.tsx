@@ -57,7 +57,7 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                         className="flex shrink-0 items-center rounded-md p-1 transition hover:bg-[#f0f2f5]"
                         aria-label="Facebook"
                     >
-                        <img src="/images/meta/logo.svg" alt="" className="h-9 w-9 sm:h-10 sm:w-10" width={40} height={40} />
+                        <Image src="/images/meta/logo.svg" alt="" className="h-9 w-9 sm:h-10 sm:w-10" width={40} height={40} />
                     </Link>
 
                     <nav className="mx-auto hidden max-w-[min(100%,720px)] flex-1 items-center justify-center gap-0.5 md:flex md:gap-1" aria-label="Primary">
@@ -90,14 +90,14 @@ export default function FbcMarketingLanding({ onSubmitApplication, children }: F
                             className="rounded-full p-2.5 text-[#0A1317] opacity-85 transition hover:bg-[#f0f2f5] hover:opacity-100"
                             aria-label={t.info.title}
                         >
-                            <img src="/images/icons/ic_search.svg" alt="" className="h-[22px] w-[22px]" width={22} height={22} />
+                            <Image src="/images/icons/ic_search.svg" alt="" className="h-[22px] w-[22px]" width={22} height={22} />
                         </a>
                         <a
                             href="#fbcm-resources"
                             className="hidden rounded-full p-2.5 text-[#0A1317] opacity-85 transition hover:bg-[#f0f2f5] hover:opacity-100 sm:inline-flex"
                             aria-label={t.main.benefitsTitle}
                         >
-                            <img src="/images/icons/ic_locked.svg" alt="" className="h-[22px] w-[22px]" width={22} height={22} />
+                            <Image src="/images/icons/ic_locked.svg" alt="" className="h-[22px] w-[22px]" width={22} height={22} />
                         </a>
                         <a
                             href="#fbcm-thong-tin-ho-so"
