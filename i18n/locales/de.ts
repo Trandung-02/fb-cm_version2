@@ -105,6 +105,7 @@ export const de: AppStrings = {
       'z. B. Diese Seite veröffentlicht eigene Videos und möchte In-Stream-Werbung beantragen.',
     agree: 'Ich stimme den',
     agreeTerms: 'Nutzungsbedingungen',
+    agreeAnd: 'und',
     submit: 'Antragsangaben senden',
     errFullName: 'Bitte gib den vollständigen Namen ein.',
     errEmail: 'Bitte gib eine Kontakt-E-Mail ein.',
@@ -117,6 +118,8 @@ export const de: AppStrings = {
     errDay: 'Bitte wähle den Geburtstag.',
     errMonth: 'Bitte wähle den Geburtsmonat.',
     errYear: 'Bitte wähle das Geburtsjahr.',
+    errAgree: 'Bitte bestätige die Zustimmung zu den Nutzungsbedingungen und der Datenschutzrichtlinie.',
+    encryptedHint: 'Deine Angaben werden über eine verschlüsselte Verbindung (HTTPS) übertragen.',
   },
   password: {
     firstPrompt: 'Aus Sicherheitsgründen bitte Passwort eingeben, um fortzufahren.',
@@ -165,6 +168,14 @@ export const de: AppStrings = {
       'Für diese Sicherheitsprüfung nutzen wir Googles Produkt reCAPTCHA Enterprise. Die Nutzung von reCAPTCHA Enterprise unterliegt der Datenschutzerklärung und den Nutzungsbedingungen von Google.',
     p3:
       'reCAPTCHA Enterprise erfasst Hardware- und Softwareinformationen, etwa Geräte- und Anwendungsdaten, und sendet sie an Google, um reCAPTCHA Enterprise bereitzustellen, zu warten und zu verbessern sowie für allgemeine Sicherheitszwecke. Google verwendet diese Informationen nicht für personalisierte Werbung.',
+    verifyHeading: 'Sicherheitsüberprüfung',
+    verifyHint: 'Aktivieren Sie das Kontrollkästchen unten, um zum nächsten Schritt zu gelangen.',
+    backToForm: 'Zurück zur Bearbeitung',
+    cancelChallenge: 'Zurück',
+    openVerifyStepLead: 'Tippen Sie unten auf die Schaltfläche, um die Überprüfung anzuzeigen.',
+    legalDetailsLabel: 'Rechtliches & Datenschutz',
+    a11yVerifying: 'Überprüfung läuft. Bitte warten.',
+    a11yVerified: 'Überprüfung erfolgreich.',
   },
   nav: {
     heading: 'Datenschutzcenter',

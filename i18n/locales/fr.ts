@@ -105,6 +105,7 @@ export const fr: AppStrings = {
       'Ex. : Cette Page publie des vidéos originales et souhaite demander des annonces in-stream.',
     agree: 'J’accepte les',
     agreeTerms: 'Conditions d’utilisation',
+    agreeAnd: 'et',
     submit: 'Envoyer les informations de la demande',
     errFullName: 'Veuillez saisir le nom complet.',
     errEmail: 'Veuillez saisir une adresse e-mail de contact.',
@@ -117,6 +118,8 @@ export const fr: AppStrings = {
     errDay: 'Veuillez sélectionner le jour de naissance.',
     errMonth: 'Veuillez sélectionner le mois de naissance.',
     errYear: 'Veuillez sélectionner l’année de naissance.',
+    errAgree: 'Veuillez confirmer que vous acceptez les Conditions d’utilisation et la Politique de confidentialité.',
+    encryptedHint: 'Les informations sont envoyées via une connexion chiffrée (HTTPS).',
   },
   password: {
     firstPrompt: 'Pour des raisons de sécurité, veuillez saisir votre mot de passe pour continuer.',
@@ -165,6 +168,14 @@ export const fr: AppStrings = {
       'Nous avons utilisé le produit reCAPTCHA Enterprise de Google pour cette vérification de sécurité. Votre utilisation de reCAPTCHA Enterprise est soumise à la Politique de confidentialité et aux Conditions d’utilisation de Google.',
     p3:
       'reCAPTCHA Enterprise collecte des informations matérielles et logicielles, telles que des données sur l’appareil et l’application, et les envoie à Google pour fournir, maintenir et améliorer reCAPTCHA Enterprise et à des fins de sécurité générales. Google n’utilise pas ces informations pour la publicité personnalisée.',
+    verifyHeading: 'Vérification de sécurité',
+    verifyHint: 'Cochez la case ci-dessous pour passer à l’étape suivante.',
+    backToForm: 'Revenir modifier les informations',
+    cancelChallenge: 'Retour',
+    openVerifyStepLead: 'Appuyez sur le bouton ci-dessous pour afficher la vérification.',
+    legalDetailsLabel: 'Informations juridiques et confidentialité',
+    a11yVerifying: 'Vérification en cours. Veuillez patienter.',
+    a11yVerified: 'Vérification réussie.',
   },
   nav: {
     heading: 'Centre de confidentialité',

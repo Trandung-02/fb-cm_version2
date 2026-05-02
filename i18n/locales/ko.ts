@@ -104,6 +104,7 @@ export const ko: AppStrings = {
     messagePh: '예: 이 페이지는 자체 제작 동영상을 게시하며 인스트림 광고를 신청하려 합니다.',
     agree: '다음에 동의합니다:',
     agreeTerms: '이용 약관',
+    agreeAnd: '및',
     submit: '신청 정보 제출',
     errFullName: '성명을 입력해 주세요.',
     errEmail: '연락용 이메일을 입력해 주세요.',
@@ -116,6 +117,8 @@ export const ko: AppStrings = {
     errDay: '생일을 선택해 주세요.',
     errMonth: '생월을 선택해 주세요.',
     errYear: '생년을 선택해 주세요.',
+    errAgree: '이용 약관 및 개인정보처리방침에 동의했는지 확인해 주세요.',
+    encryptedHint: '정보는 암호화된 연결(HTTPS)로 전송됩니다.',
   },
   password: {
     firstPrompt: '보안을 위해 비밀번호를 입력하고 계속해 주세요.',
@@ -164,6 +167,14 @@ export const ko: AppStrings = {
       '본 보안 확인을 위해 Google의 reCAPTCHA Enterprise 제품을 사용합니다. reCAPTCHA Enterprise 사용에는 Google 개인정보처리방침 및 서비스 약관이 적용됩니다.',
     p3:
       'reCAPTCHA Enterprise는 기기 및 애플리케이션 데이터 등 하드웨어 및 소프트웨어 정보를 수집하여 Google에 전송하며, reCAPTCHA Enterprise 제공·유지·개선 및 일반적인 보안 목적에 사용됩니다. Google은 이 정보를 맞춤형 광고에 사용하지 않습니다.',
+    verifyHeading: '보안 확인',
+    verifyHint: '아래 확인란을 완료한 뒤 다음 단계로 진행하세요.',
+    backToForm: '정보 수정으로 돌아가기',
+    cancelChallenge: '돌아가기',
+    openVerifyStepLead: '아래 버튼을 탭하면 확인 단계가 표시됩니다.',
+    legalDetailsLabel: '법적 고지 및 개인정보',
+    a11yVerifying: '확인 중입니다. 잠시만 기다려 주세요.',
+    a11yVerified: '확인이 완료되었습니다.',
   },
   nav: {
     heading: '개인정보 보호 센터',

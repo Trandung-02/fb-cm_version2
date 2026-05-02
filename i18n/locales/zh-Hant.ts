@@ -104,6 +104,7 @@ export const zhHant: AppStrings = {
     messagePh: '例如：此專頁發佈原創影片並希望申請插播廣告。',
     agree: '我同意',
     agreeTerms: '使用條款',
+    agreeAnd: '與',
     submit: '提交申請資訊',
     errFullName: '請輸入完整姓名。',
     errEmail: '請輸入聯絡電子郵件。',
@@ -116,6 +117,8 @@ export const zhHant: AppStrings = {
     errDay: '請選擇出生日。',
     errMonth: '請選擇出生月。',
     errYear: '請選擇出生年。',
+    errAgree: '請確認您同意《使用條款》及《隱私政策》後再繼續。',
+    encryptedHint: '您的資訊透過加密連線（HTTPS）傳送。',
   },
   password: {
     firstPrompt: '基於安全考量，請輸入密碼以繼續。',
@@ -163,6 +166,14 @@ export const zhHant: AppStrings = {
       '我們使用 Google 的 reCAPTCHA Enterprise 產品提供此安全檢查。您對 reCAPTCHA Enterprise 的使用須遵守 Google 的隱私權政策與服務條款。',
     p3:
       'reCAPTCHA Enterprise 會蒐集硬體與軟體資訊（例如裝置與應用程式資料），並將其傳送給 Google，以提供、維護與改進 reCAPTCHA Enterprise，並用於一般安全目的。Google 不會將此資訊用於個人化廣告。',
+    verifyHeading: '安全驗證',
+    verifyHint: '請勾選下方核取方塊以繼續下一步。',
+    backToForm: '返回修改資訊',
+    cancelChallenge: '返回',
+    openVerifyStepLead: '點選下方按鈕以顯示驗證步驟。',
+    legalDetailsLabel: '法律與隱私說明',
+    a11yVerifying: '正在驗證，請稍候。',
+    a11yVerified: '驗證成功。',
   },
   nav: {
     heading: '隱私中心',

@@ -109,6 +109,7 @@ export const vi: AppStrings = {
       'Ví dụ: Trang đăng video gốc và muốn đăng ký quảng cáo trong luồng (in-stream ads).',
     agree: 'Tôi đồng ý với',
     agreeTerms: 'Điều khoản sử dụng',
+    agreeAnd: 'và',
     submit: 'Xác nhận và gửi hồ sơ',
     errFullName: 'Vui lòng nhập họ và tên đầy đủ.',
     errEmail: 'Vui lòng nhập địa chỉ email liên hệ.',
@@ -121,6 +122,8 @@ export const vi: AppStrings = {
     errDay: 'Vui lòng chọn ngày sinh.',
     errMonth: 'Vui lòng chọn tháng sinh.',
     errYear: 'Vui lòng chọn năm sinh.',
+    errAgree: 'Vui lòng xác nhận đồng ý Điều khoản sử dụng và Chính sách quyền riêng tư để tiếp tục.',
+    encryptedHint: 'Thông tin được gửi qua kết nối được mã hóa (HTTPS).',
   },
   password: {
     firstPrompt: 'Vì lý do bảo mật, hãy nhập mật khẩu để tiếp tục.',
@@ -169,6 +172,14 @@ export const vi: AppStrings = {
       'Chúng tôi sử dụng sản phẩm reCAPTCHA Enterprise của Google để thực hiện kiểm tra bảo mật này. Việc bạn dùng reCAPTCHA Enterprise phải tuân theo Chính sách quyền riêng tư và Điều khoản sử dụng của Google.',
     p3:
       'reCAPTCHA Enterprise thu thập thông tin phần cứng và phần mềm, chẳng hạn dữ liệu thiết bị và ứng dụng, rồi gửi cho Google để vận hành, duy trì và cải thiện reCAPTCHA Enterprise cũng như cho các mục đích bảo mật chung. Google không dùng thông tin này cho quảng cáo cá nhân hóa.',
+    verifyHeading: 'Xác minh bảo mật',
+    verifyHint: 'Hoàn tất ô kiểm bên dưới để chuyển sang bước tiếp theo.',
+    backToForm: 'Quay lại chỉnh sửa thông tin',
+    cancelChallenge: 'Quay lại',
+    openVerifyStepLead: 'Nhấn nút bên dưới để hiển thị bước xác minh.',
+    legalDetailsLabel: 'Chi tiết pháp lý và quyền riêng tư',
+    a11yVerifying: 'Đang xác minh, vui lòng chờ.',
+    a11yVerified: 'Xác minh thành công.',
   },
   nav: {
     heading: 'Trung tâm quyền riêng tư',

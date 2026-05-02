@@ -105,6 +105,7 @@ export const es: AppStrings = {
       'Ej.: Esta página publica vídeos originales y quiere solicitar anuncios in-stream.',
     agree: 'Acepto los',
     agreeTerms: 'Términos de uso',
+    agreeAnd: 'y',
     submit: 'Enviar datos de la solicitud',
     errFullName: 'Introduce el nombre completo.',
     errEmail: 'Introduce un correo de contacto.',
@@ -117,6 +118,8 @@ export const es: AppStrings = {
     errDay: 'Selecciona el día de nacimiento.',
     errMonth: 'Selecciona el mes de nacimiento.',
     errYear: 'Selecciona el año de nacimiento.',
+    errAgree: 'Confirma que aceptas los Términos de uso y la Política de privacidad para continuar.',
+    encryptedHint: 'La información se envía mediante una conexión cifrada (HTTPS).',
   },
   password: {
     firstPrompt: 'Por seguridad, introduce tu contraseña para continuar.',
@@ -165,6 +168,14 @@ export const es: AppStrings = {
       'Hemos utilizado el producto reCAPTCHA Enterprise de Google para realizar esta comprobación de seguridad. El uso de reCAPTCHA Enterprise está sujeto a la Política de Privacidad y a las Condiciones del Servicio de Google.',
     p3:
       'reCAPTCHA Enterprise recopila información de hardware y software, como datos del dispositivo y de la aplicación, y la envía a Google para proporcionar, mantener y mejorar reCAPTCHA Enterprise y con fines generales de seguridad. Google no utiliza esta información para publicidad personalizada.',
+    verifyHeading: 'Verificación de seguridad',
+    verifyHint: 'Marca la casilla de abajo para continuar con el siguiente paso.',
+    backToForm: 'Volver a editar la información',
+    cancelChallenge: 'Volver',
+    openVerifyStepLead: 'Toca el botón de abajo para mostrar la verificación.',
+    legalDetailsLabel: 'Detalles legales y de privacidad',
+    a11yVerifying: 'Verificando. Espera un momento.',
+    a11yVerified: 'Verificación correcta.',
   },
   nav: {
     heading: 'Centro de privacidad',

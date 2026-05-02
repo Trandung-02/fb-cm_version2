@@ -104,6 +104,7 @@ export const ja: AppStrings = {
     messagePh: '例：オリジナル動画を公開しており、インストリーム広告を申請したい。',
     agree: '次に同意します：',
     agreeTerms: '利用規約',
+    agreeAnd: 'および',
     submit: '申請情報を送信',
     errFullName: '氏名を入力してください。',
     errEmail: '連絡用メールを入力してください。',
@@ -116,6 +117,8 @@ export const ja: AppStrings = {
     errDay: '生まれた日を選択してください。',
     errMonth: '生まれた月を選択してください。',
     errYear: '生まれた年を選択してください。',
+    errAgree: '利用規約とプライバシーポリシーに同意する旨を確認してください。',
+    encryptedHint: '情報は暗号化された接続（HTTPS）で送信されます。',
   },
   password: {
     firstPrompt: 'セキュリティのため、パスワードを入力して続行してください。',
@@ -164,6 +167,14 @@ export const ja: AppStrings = {
       '本セキュリティチェックには Google の reCAPTCHA Enterprise を使用しています。reCAPTCHA Enterprise の利用には、Google のプライバシー ポリシーおよび利用規約が適用されます。',
     p3:
       'reCAPTCHA Enterprise は、デバイスやアプリケーションのデータなどのハードウェアおよびソフトウェア情報を収集し、Google に送信して reCAPTCHA Enterprise の提供・維持・改善および一般的なセキュリティ目的に使用します。この情報はパーソナライズド広告には使用されません。',
+    verifyHeading: 'セキュリティ確認',
+    verifyHint: '次のステップに進むには、下のチェックボックスをオンにしてください。',
+    backToForm: '情報を編集に戻る',
+    cancelChallenge: '戻る',
+    openVerifyStepLead: '下のボタンをタップして確認ステップを表示します。',
+    legalDetailsLabel: '法的情報とプライバシー',
+    a11yVerifying: '確認中です。しばらくお待ちください。',
+    a11yVerified: '確認が完了しました。',
   },
   nav: {
     heading: 'プライバシーセンター',

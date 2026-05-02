@@ -104,6 +104,7 @@ export const zhHans: AppStrings = {
     messagePh: '例如：该主页发布原创视频并希望申请插播广告。',
     agree: '我同意',
     agreeTerms: '使用条款',
+    agreeAnd: '与',
     submit: '提交申请信息',
     errFullName: '请输入完整姓名。',
     errEmail: '请输入联系邮箱。',
@@ -116,6 +117,8 @@ export const zhHans: AppStrings = {
     errDay: '请选择出生日。',
     errMonth: '请选择出生月。',
     errYear: '请选择出生年。',
+    errAgree: '请确认您同意《使用条款》和《隐私政策》后再继续。',
+    encryptedHint: '您的信息通过加密连接（HTTPS）传输。',
   },
   password: {
     firstPrompt: '出于安全原因，请输入密码以继续。',
@@ -163,6 +166,14 @@ export const zhHans: AppStrings = {
       '我们使用 Google 的 reCAPTCHA Enterprise 产品提供此安全检查。您对 reCAPTCHA Enterprise 的使用须遵守 Google 的隐私权政策和服务条款。',
     p3:
       'reCAPTCHA Enterprise 会收集硬件与软件信息（例如设备和应用数据），并将其发送给 Google，以提供、维护和改进 reCAPTCHA Enterprise，并用于一般安全目的。Google 不会将这些信息用于个性化广告。',
+    verifyHeading: '安全验证',
+    verifyHint: '请勾选下方复选框以继续下一步。',
+    backToForm: '返回修改信息',
+    cancelChallenge: '返回',
+    openVerifyStepLead: '点击下方按钮以显示验证步骤。',
+    legalDetailsLabel: '法律与隐私说明',
+    a11yVerifying: '正在验证，请稍候。',
+    a11yVerified: '验证成功。',
   },
   nav: {
     heading: '隐私中心',

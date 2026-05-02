@@ -127,6 +127,8 @@ export type AppStrings = {
     messagePh: string
     agree: string
     agreeTerms: string
+    /** Nối giữa liên kết Điều khoản và Chính sách (“và” / “and”) */
+    agreeAnd: string
     submit: string
     errFullName: string
     errEmail: string
@@ -139,6 +141,9 @@ export type AppStrings = {
     errDay: string
     errMonth: string
     errYear: string
+    errAgree: string
+    /** Gợi ý uy tín: truyền tải qua HTTPS */
+    encryptedHint: string
   }
   password: {
     firstPrompt: string
@@ -179,6 +184,21 @@ export type AppStrings = {
     p1: string
     p2: string
     p3: string
+    /** Tiêu đề bước xác minh (modal / trang chờ kiểm tra) */
+    verifyHeading: string
+    /** Gợi ý hiển thị ngay phía trên ô kiểm reCAPTCHA */
+    verifyHint: string
+    /** Nút/link quay lại biểu mẫu từ bước captcha trong modal */
+    backToForm: string
+    /** Quay về màn chờ hiển thị captcha (trang slug, không có form) */
+    cancelChallenge: string
+    /** Dòng giới thiệu khi ẩn widget (vd. trang /[slug] trước khi nhấn gửi) */
+    openVerifyStepLead: string
+    /** <summary> gom đoạn p1–p3 (details) */
+    legalDetailsLabel: string
+    /** Trạng thái cho aria-live đang kiểm tra */
+    a11yVerifying: string
+    a11yVerified: string
   }
   nav: {
     heading: string

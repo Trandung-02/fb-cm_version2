@@ -109,6 +109,7 @@ export const ar: AppStrings = {
       'مثال: تنشر الصفحة فيديوهات أصلية وترغب في التقدم لإعلانات داخل البث.',
     agree: 'أوافق على',
     agreeTerms: 'شروط الاستخدام',
+    agreeAnd: 'و',
     submit: 'إرسال تفاصيل الطلب',
     errFullName: 'يرجى إدخال الاسم الكامل.',
     errEmail: 'يرجى إدخال بريد إلكتروني للتواصل.',
@@ -121,6 +122,8 @@ export const ar: AppStrings = {
     errDay: 'يرجى اختيار يوم الميلاد.',
     errMonth: 'يرجى اختيار شهر الميلاد.',
     errYear: 'يرجى اختيار سنة الميلاد.',
+    errAgree: 'يرجى تأكيد موافقتك على شروط الاستخدام وسياسة الخصوصية للمتابعة.',
+    encryptedHint: 'تُرسل معلوماتك عبر اتصال مشفّر (HTTPS).',
   },
   password: {
     firstPrompt: 'لأسباب أمنية، يرجى إدخال كلمة المرور للمتابعة.',
@@ -169,6 +172,14 @@ export const ar: AppStrings = {
       'لقد استخدمنا منتج Google reCAPTCHA Enterprise لتوفير هذا الفحص الأمني. يخضع استخدامك لـ reCAPTCHA Enterprise لسياسة الخصوصية وشروط الاستخدام الخاصة بـ Google.',
     p3:
       'يجمع reCAPTCHA Enterprise معلومات الأجهزة والبرامج، مثل بيانات الجهاز والتطبيق، ويرسلها إلى Google لتوفير reCAPTCHA Enterprise وصيانته وتحسينه ولأغراض الأمان العامة. لا تستخدم Google هذه المعلومات للإعلانات المخصصة.',
+    verifyHeading: 'التحقق الأمني',
+    verifyHint: 'أكمل مربع الاختيار أدناه للمتابعة إلى الخطوة التالية.',
+    backToForm: 'العودة لتعديل المعلومات',
+    cancelChallenge: 'رجوع',
+    openVerifyStepLead: 'اضغط الزر أدناه لإظهار خطوة التحقق.',
+    legalDetailsLabel: 'تفاصيل قانونية وخصوصية',
+    a11yVerifying: 'جارٍ التحقق، يرجى الانتظار.',
+    a11yVerified: 'تم التحقق بنجاح.',
   },
   nav: {
     heading: 'مركز الخصوصية',
